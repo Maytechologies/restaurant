@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepito | Burguer</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+  <!--   Link Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+  rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+  crossorigin="anonymous">
+
+   <!--   Link Script Bootstrap 5 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Inicio del header  -->
+
+    <header class="header">
+
+        <div id="menu-btn" class="fas fa-bars icons"></div>
+        <div id="search-btn" class="fas fa-search icons" style="visibility: hidden;"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="menu.html">Menu</a>
+            <a href="#">Nosotros </a>
+            <span class="space"> </span>
+            <a href="#"> Clientes </a>
+            <a href="#"> Contacto </a>
+            <a href="#"> Promosión </a>
+        </nav>
+
+        <a href="#" class="fas fa-user" style="visibility: hidden;"></a>
+
+        <a href="#home" class="logo"><img src="images/title-img.png" alt=""></a>
+
+       <!--  <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search icons"></label>
+        </form> -->
+
+    </header>
+
+    <!-- Inicio Prmosiones -->
+
+    <section class="blogs" id="blogs">
+
+        <div class="heading">
+            <h3>Promosiones del Dia</h3>
+        </div>
+
+        <div class="box-container">
+
+            <div class="box" data-aos="fade-up" data-aos-delay="150">
+                <div class="image">
+                    <img src="images/cards/MIXTA_PRO.webp" alt="pepito" class="img_menu" type="image/webp">
+                    <div class="icons">
+                        <p class="titulo_promo">Mixta </p>
+                        <p class="text_promo">Esta delicia lleva doble carne, tocino, Queso Shedder </p>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>hamburguesa mixta</h3>
+                </div>
+            </div>
+
+
+
+            <div class="box" data-aos="fade-up" data-aos-delay="300">
+                <div class="image">
+                    <img src="images/cards/CLUBHOUSE_PRO.webp" alt="pepito" class="img_menu" type="image/webp">
+                    <div class="icons">
+                        <p class="titulo_promo">Club House </p>
+                        <p class="text_promo">Sandwich al estilo Americano, acompañado con papas y salsa</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>clubhouse</h3>
+                </div>
+            </div>
+
+          
+
+            <div class="box" data-aos="fade-up" data-aos-delay="450">
+                <div class="image">
+                    <img src="images/cards/PROBRE_PRO.webp" alt="pepito" class="img_menu" type="image/webp">
+                    <div class="icons">
+                        <p class="titulo_promo">A lo Probre </p>
+                        <p class="text_promo">Tradición chilena, papa, huevo, doble carne</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>A lo pobre</h3>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Final Prmosiones -->
+
+<!-- <section class="section_table">
+    <div class="container tabla_body">
+            <table class="body_table">
+                <tr>
+                    <th>#</th>
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                </tr>
+               
+                <tr class="colunm">
+                    <td class="number_menu">1</td>
+                    <td class="imagen_menu">Foto</td>
+                    <td class="name_menu"> Nombre</td>
+                    <td class="price_menu">Precio</td>
+                </tr>
+
+                <tr class="colunm">
+                    <td class="number_menu">2</td>
+                    <td class="imagen_menu">Foto</td>
+                    <td class="name_menu"> Nombre</td>
+                    <td class="price_menu">Precio</td>
+                </tr>
+
+                <tr class="colunm">
+                    <td class="number_menu">3</td>
+                    <td class="imagen_menu">Foto</td>
+                    <td class="name_menu"> Nombre</td>
+                    <td class="price_menu">Precio</td>
+                </tr>
+            </table>
+    </div>
+</section> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="heading">
+                <h3>La Carta</h3>
+             </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-dark table-striped ml-2 mr-2">
+            <thead class="">
+              <tr class="colunm_menu">
+                <th class="item" scope="col">#</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Detalles</th>
+                <th scope="col">Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class=" item texto_menu">1</td>
+                <td><img src="images/edit/MIXTA.webp" alt="pepito" class="img_menu" type="image/webp"></td>
+                <td class="texto_menu">HAMBURGUESA MIXTA</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#myModal">Ver</a></td>
+                <td class="texto_menu">4.600</td>
+              </tr>
+              <tr>
+                <td class="item texto_menu texto_menu">2</td>
+                <td><picture><source srcset="images/edit/LA GORDA.webp" type="image/webp"> 
+                  <img src="images/edit/LA GORDA.webp" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">HAMBURGUESA GORDA</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#burguer_2">Ver</a></td>
+                <td class="texto_menu">5.200</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">3</td>
+                <td><picture><source src="images/edit/CLUB_HOUSE.webp" type="image/webp"> 
+                  <img src="images/edit/CLUB_HOUSE.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">CLUB HOUSE SIMPLE</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#clubhouse">Ver</a></td>
+                <td class="texto_menu">4.550</td>
+              </tr>
+
+              <tr>
+                <td class=" item texto_menu texto_menu">4</td>
+                <td><picture><source srcset="images/edit/CLUBHOUSE_ESPECIAL.webp" type="image/webp"> 
+                  <img src="images/edit/CLUBHOUSE_ESPECIAL.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">CLUB HOUSE ESPECIAL</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#clubhousee">Ver</a></td>
+                <td class="texto_menu">4.550</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">5</td>
+                <td><picture><source srcset="images/edit/PEPITO.webp" type="image/webp"> 
+                  <img src="images/edit/PEPITO.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">PEPITO CHOXI</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#pepitocx">Ver</a></td>
+                <td class="texto_menu">6.890</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">6</td>
+                <td><picture><source srcset="images/edit/PEPITO_GRANJERO.webp" type="image/webp"> 
+                  <img src="images/edit/PEPITO_GRANJERO.png" alt="pepito" class="img_menu"></picture></td>
+
+                <td class="texto_menu">PEPITO GRANJERO</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#pgranjero">Ver</a></td>
+                <td class="texto_menu">7.800</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">7</td>
+                <td>
+                  <picture><source srcset="images/edit/MIXTO.webp" type="image/webp"> 
+                             <img src="images/edit/MIXTO.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">PEPITO MIXTO</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#pepitomx">Ver</a></td>
+                <td class="texto_menu">7.800</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">8</td>
+                <td>
+                  <img src="images/edit/PERRO_CALIENTE.webp" alt="perro caliente" class="img_menu">
+                <td class="texto_menu">PERRO CALIENTE</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#perro1">Ver</a></td>
+                <td class="texto_menu">$ 1.750</td>
+              </tr>
+              
+
+              <tr>
+                <td class="item texto_menu texto_menu">9</td>
+                <td><picture><source srcset="images/edit/COMPLETO.webp" type="image/webp"> 
+                  <img src="images/edit/COMPLETO.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">COMPLETO</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#completo">Ver</a></td>
+                <td class="texto_menu">1.500</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">10</td>
+                <td><picture><source src="images/edit/COMPLETO ITALIANO.webp" type="image/webp"> 
+                  <img src="images/edit/COMPLETO ITALIANO.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">COMPLETO ESPECIAL</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#completoitalia">Ver</a></td>
+                <td class="texto_menu">1.750</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">11</td>
+                <td><picture><source srcset="images/edit/PROBRE.webp" type="image/webp"> 
+                  <img src="images/edit/PROBRE.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">HAMBURGUESA A LO POBRE</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#alopobre">Ver</a></td>
+                <td class="texto_menu">3.900</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">12</td>
+                <td><picture><source srcset="images/edit/CHURRASCO_2.webp" type="image/webp"> 
+                  <img src="images/edit/CHURRASCO_2.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">CHURRASCO A LA PALTA</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#churrasco1">Ver</a></td>
+                <td class="texto_menu">4.100</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">13</td>
+                <td><picture><source srcset="images/edit/CHURRASCO.webp" type="image/webp"> 
+                  <img src="images/edit/CHURRASCO.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">CHURRASCO ITALIANO</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#churrasco2">Ver</a></td>
+                <td class="texto_menu">3.900</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">14</td>
+                <td><picture><source srcset="images/edit/TEQUEÑOS.webp" type="image/webp"> 
+                  <img src="images/edit/TEQUEÑOS.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">CANASTA DE TEQUEÑOS - 10Und</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#tequenos">Ver</a></td>
+                <td class="texto_menu">3.000</td>
+              </tr>
+
+              
+
+              <tr>
+                <td class="item texto_menu texto_menu">15</td>
+                <td><picture><source srcset="images/edit/PAPAS_LOCAS.webp" type="image/webp"> 
+                  <img src="images/edit/PAPAS_LOCAS.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">PAPAS LOCAS</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#papas">Ver</a></td>
+                <td class="texto_menu">6.000</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">16</td>
+                <td><picture><source srcset="images/edit/SALCHIPAPAS.webp" type="image/webp"> 
+                  <img src="images/edit/SALCHIPAPAS.png" alt="pepito" class="img_menu"></picture></td>
+                <td class="texto_menu">SALCHI PAPAS</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#salchicha">Ver</a></td>
+                <td class="texto_menu">3.500</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">17</td>
+                <td><img src="images/cards/BEBIDAS350ML.jpg" class="img_menu"></td>
+                <td class="texto_menu">BEBIDAS 350Ml</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#bebidas350">Ver</a></td>
+                <td class="texto_menu">1.000</td>
+              </tr>
+
+              <tr>
+                <td class="item texto_menu texto_menu">18</td>
+                <td><img src="images/cards/BEBIDAS1.5lts.jpg" class="img_menu"></td>
+                <td class="texto_menu">BEBIDAS 1.5Lt</td>
+                <td class="texto_menu" ><a href="" data-bs-toggle="modal" data-bs-target="#bebidas15">Ver</a></td>
+                <td class="texto_menu">2.300</td>
+              </tr>
+
+            </tbody>
+          </table>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Sesión de modales de Productos -->
+
+<!-- The Modal -->
+<div class="container 1">
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
+        <!-- Modal Header -->
+  
+        <picture><source srcset="images/cards/MIXTA.webp" type="image/webp"> 
+          <img src="images/cards/MIXTA.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+
+      <!-- Cuerpo del Modal -->
+      <div class="content_modal container">
+            <div class="modal-body">
+                
+                <h3 class="titulo_producto modal-title">HAMBURGUESA MIXTA</h3>
+              <hr>
+                <h4 class="text_ingrediente">Ingredientes  :</h4>
+              
+                <ul class="ingredientes">
+           
+                <li class="item_ingrediente">Carne de Vacuno</li>
+                    <li class="item_ingrediente">Queso Cheddar</li>
+                        <li class="item_ingrediente">Cebolla</li>
+                        <li class="item_ingrediente">Tocino</li>
+                            <li class="item_ingrediente">Salsa de Queso</li>
+                            <li class="item_ingrediente">Salsa Mayo</li>
+                                </ul>
+            
+            </div>
+      </div>
+
+                    <!-- Modal footer -->
+                  <div class="modal-footer">
+               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+           </div>
+
+        </div>
+      </div> 
+  </div>
+</div>
+
+<div class="container 2">
+    <div class="modal" id="burguer_2">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- imagen modal -->
+     
+          <picture><source srcset="images/cards/GORDA.webp" type="image/webp"> 
+            <img src="images/cards/GORDA.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+  
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h4 class="titulo_producto">HAMBURGUESA LA GORDA</h4>
+                   <hr>
+                   <h4 class="text_ingrediente">Ingredientes  :</h4>
+                  <ul class="ingredientes">
+                  <li class="item_ingrediente">Tomate</li>
+                      <li class="item_ingrediente">Cebolla</li>
+                      <li class="item_ingrediente">Doble Carne</li>
+                      <li class="item_ingrediente">Huevo</li>
+                      <li class="item_ingrediente">Tocino</li>
+                      <li class="item_ingrediente">Jamón</li>
+                      <li class="item_ingrediente">Queso Amarillo</li>
+                      <li class="item_ingrediente">Papas al Hilo</li>
+                 </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+  
+
+  <div class="container 3">
+    <div class="modal" id="clubhouse">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+     
+          <picture><source srcset="images/cards/CLUBHOUSE.webp" type="image/webp"> 
+            <img src="images/cards/CLUBHOUSE.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+      
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">CLUB HOUSE SIMPLE</h3>
+                  <hr>
+                  <h4 class="text_ingrediente">Ingredientes</h4>
+                
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Tomate</li>
+                      <li class="item_ingrediente">Cebolla</li>
+                          <li class="item_ingrediente">Lechuga</li>
+                          <li class="item_ingrediente">Tocino</li>
+                              <li class="item_ingrediente">Queso</li>
+                              <li class="item_ingrediente">Huevo</li>
+                                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 4">
+    <div class="modal" id="clubhousee">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+          
+          <picture><source srcset="images/cards/CLUBHOUSE_E.webp" type="image/webp"> 
+            <img src="images/cards/CLUBHOUSE_E.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+   
+      
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">CLUB HOUSE ESPECIAL</h3>
+                  <hr>
+                  <h4 class="text_ingrediente">Ingredientes  :</h4>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Tomate</li>
+                      <li class="item_ingrediente">Cebolla</li>
+                          <li class="item_ingrediente">Lechuga</li>
+                          <li class="item_ingrediente">Tocino</li>
+                              <li class="item_ingrediente">Queso</li>
+                              <li class="item_ingrediente">Carne</li>
+                                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+
+
+  <div class="container 5">
+    <div class="modal" id="pgranjero">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+          <picture><source srcset="images/cards/GRANJERO.webp" type="image/webp"> 
+            <img src="images/cards/GRANJERO.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+         <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">PEPITO GRANJERO</h3>
+                  <hr>
+                  <h4 class="text_ingrediente">Ingredientes</h4>
+                  
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Tomate</li>
+                      <li class="item_ingrediente">Cebolla</li>
+                          <li class="item_ingrediente">Lechuga</li>
+                          <li class="item_ingrediente">Tocino</li>
+                              <li class="item_ingrediente">Queso</li>
+                              <li class="item_ingrediente">Carne</li>
+                              <li class="item_ingrediente">Pollo</li>
+                              <li class="item_ingrediente">Chorizo</li>
+                                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 6">
+    <div class="modal" id="pepitocx">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+     
+          <picture><source srcset="images/cards/CHOXI.webp" type="image/webp"> 
+            <img src="images/cards/CHOXI.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+         
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">PEPITO CHIXI</h3>
+                  <hr>
+                  <h4 class="text_ingrediente">Ingredientes</h4>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Tomate</li>
+                      <li class="item_ingrediente">Cebolla</li>
+                          <li class="item_ingrediente">Carne</li>
+                          <li class="item_ingrediente">Chorizo</li>
+                              <li class="item_ingrediente">Queso Mantecoso</li>
+                              <li class="item_ingrediente">Papas al Hilo</li>
+                                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 7">
+    <div class="modal" id="pepitomx">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+     
+          <picture><source src="images/cards/MIXTO.webp" type="image/webp"> 
+            <img src="images/cards/MIXTO.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+         
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">PEPITO MIXTO</h3>
+                  <hr>
+                  <h4 class="text_ingrediente">Ingredientes  :</h4>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Tomate</li>
+                      <li class="item_ingrediente">Cebolla</li>
+                          <li class="item_ingrediente">Carne</li>
+                          <li class="item_ingrediente">Chorizo</li>
+                              <li class="item_ingrediente">Queso Mantecoso</li>
+                              <li class="item_ingrediente">Papas al Hilo</li>
+                                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 8">
+    <div class="modal" id="perro1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+     
+            <img src="images/cards/PERROSQUI.webp" alt="BEBIDAS15" class="card-img-top">
+         
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">PERRO CALIENTE</h3>
+                  <hr>
+                <h4 class="text_ingrediente">Ingredientes  :</h4>
+                  <ul class="ingredientes">
+                      <li class="item_ingrediente">Vianesa</li>
+                          <li class="item_ingrediente">Cebolla</li>
+                              <li class="item_ingrediente">Queso Mantecoso</li>
+                            <li class="item_ingrediente">Papas al Hilo</li>
+                          <li class="item_ingrediente">Ketchup</li>
+                        <li class="item_ingrediente">Mayo</li>
+                      <li class="item_ingrediente">Mostaza</li>
+                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+
+  <div class="container 8">
+    <div class="modal" id="completo">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+
+          <img  class="imgmodal card-img-top" src="images/cards/COMPLETO.jpg" alt="">
+          
+  
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">COMPLETO</h3>
+                  <hr>
+                  <h3 class="text_ingrediente">Ingredientes  :</h3>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Tomate</li>
+                  <li class="item_ingrediente">Palta</li>
+                  <li class="item_ingrediente">Vianesa</li>
+                  <li class="item_ingrediente">Ketchu</li>
+                  <li class="item_ingrediente">Mayo</li>
+                  <li class="item_ingrediente">Mostaza</li>
+              </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 9">
+    <div class="modal" id="completoitalia">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+          
+          <picture><source srcset="images/cards/ITALIANO.webp" type="image/webp"> 
+            <img src="images/cards/ITALIANO.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+         
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">COMPLETO ESPECIAL</h3>
+                  <hr>
+                  <h4 class="text_ingrediente">Ingredientes  :</h4>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Tomate</li>
+                          <li class="item_ingrediente">Palta</li>
+                          <li class="item_ingrediente">Cebolla</li>
+                          <li class="item_ingrediente">Mayo</li>
+                              <li class="item_ingrediente">Vianesa</li>
+                                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 10">
+    <div class="modal" id="alopobre">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+          
+          <picture><source src="images/cards/POBRE.webp" type="image/webp"> 
+            <img src="images/cards/POBRE.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+      
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">HABURGUESA A LO POBRE</h3>
+                  <hr>
+                  <h3 class="text_ingrediente">Ingredientes  :</h3>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Carne</li>
+                      <li class="item_ingrediente">Huevo</li>
+                          <li class="item_ingrediente">Papas Fritas</li>
+                         
+                 </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 11">
+    <div class="modal" id="churrasco1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+          
+          <picture><source srcset="images/cards/PALTA.webp" type="image/webp"> 
+            <img src="images/cards/PALTA.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+          
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+           <div class="modal-body">
+                  <h3 class="titulo_producto">CHURRASCO A LA PALTA</h3>
+                  <hr>
+                  <h4 class="text_ingrediente">Ingredientes</h4>
+                
+                  <ul class="ingredientes">
+             
+                         <li class="item_ingrediente">Carne</li>
+                         <li class="item_ingrediente">Cebolla</li>
+                         <li class="item_ingrediente">Tomate</li>
+                         <li class="item_ingrediente">Palta</li>
+                          <li class="item_ingrediente">Lechuga</li>
+                          <li class="item_ingrediente">Ketchup</li>
+                              
+                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 12">
+    <div class="modal" id="churrasco2">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+        <!-- Modal Header -->
+     
+        <picture><source srcset="images/cards/CITALIANO-22.webp" type="image/webp"> 
+          <img src="images/cards/CITALIANO-22.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+      
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">CURRASCO ITALIANO</h3>
+                  <hr>
+                  <h4 class="text_ingrediente">Ingredientes</h4>
+                  <ul class="ingredientes">
+             
+                  
+                             <li class="item_ingrediente">Carne</li>
+                              <li class="item_ingrediente">Palta</li>
+                              <li class="item_ingrediente">Tomate</li>
+                              <li class="item_ingrediente">Mayo</li>
+                            
+                  </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+
+  <div class="container 13">
+    <div class="modal" id="tequenos">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+
+          <picture><source srcset="images/cards/TEQUENOS.webp" type="image/webp"> 
+            <img src="images/cards/TEQUENOS.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+  
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">TEQUEÑOS</h3>
+                  <hr>
+                  <h3 class="text_ingrediente">Ingredientes  :</h3>
+                  <h4>Producto Venezolano</h4>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Masa de Trigo</li>
+                      <li class="item_ingrediente">Queso</li>
+                        
+                </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 14">
+    <div class="modal" id="papas">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+
+          <picture><source src="images/cards/PAPAS_LOCAS.webp" type="image/webp"> 
+            <img src="images/cards/PAPAS_LOCAS.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+  
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">PAPAS LOCAS</h3>
+                  <hr>
+                  <h3 class="text_ingrediente">Ingredientes  :</h3>
+                  <h4>Ingredientes  :</h4>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Papa</li>
+                  <li class="item_ingrediente">Carne</li>
+                  <li class="item_ingrediente">Chorizo</li>
+                      <li class="item_ingrediente">Queso</li>
+                        
+                </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 15">
+    <div class="modal" id="salchicha">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+          <!-- Modal Header -->
+          <picture><source srcset="images/cards/SALCHIPAPAS.webp" type="image/webp"> 
+            <img src="images/cards/SALCHIPAPAS.jpg" alt="BEBIDAS15" class="card-img-top"></picture>
+          
+          
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">SALCHI PAPAS</h3>
+                  <hr>
+                  <h3 class="text_ingrediente">Ingredientes  :</h3>
+                 
+                  <ul class="ingredientes">
+             
+                      <li class="item_ingrediente">Vianesa</li>
+                      <li class="item_ingrediente">Papas</li>
+                      <li class="item_ingrediente">Salsa de Queso</li>
+                            
+                </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  <div class="container 16">
+    <div class="modal" id="bebidas350">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          
+        <!-- Modal Header -->
+        <picture><source srcset="images/edit/BEBIDAS350.webp" type="image/webp"> 
+          <img src="images/edit/BEBIDAS15.png" alt="BEBIDAS15" class="card-img-top"></picture>
+        <!-- Cuerpo del Modal -->
+        <div class="content_modal container">
+              <div class="modal-body">
+                  <h3 class="titulo_producto">BEBIDAS 350Ml</h3>
+                  <hr>
+                  <h4>Solicita tu Bebida Favorita</h4>
+                  <hr>
+                  <ul class="ingredientes">
+             
+                  <li class="item_ingrediente">Pepsi</li>
+                      <li class="item_ingrediente">Coca-Cola</li>
+                      <li class="item_ingrediente">Fanta</li>
+                      <li class="item_ingrediente">Sprite</li>
+                        
+                </ul>
+              
+              </div>
+        </div>
+  
+        <!-- Modal footer -->
+                    <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+             </div>
+  
+          </div>
+        </div> 
+    </div>
+  </div>
+
+  
+<div class="modal" id="bebidas15">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+  
+          <!-- Modal Header -->
+          <picture><source srcset="images/edit/BEBIDAS15.webp" type="image/webp"> 
+            <img src="images/edit/BEBIDAS15.png" alt="BEBIDAS15" class="card-img-top"></picture>
+        <!-- Cuerpo del Modal -->
+        
+            <div class="modal-body">
+                <h3 class="titulo_producto">BEBIDAS 1.5lts</h3>
+                  <hr>
+                   <h4>Solicita tu Bebida Favorita</h4>
+                        <hr>
+                         <ul class="ingredientes">
+             
+                             <li class="item_ingrediente">Pepsi</li>
+                            <li class="item_ingrediente">Coca-Cola</li>
+                           <li class="item_ingrediente">Fanta</li>
+                          <li class="item_ingrediente">Sprite</li>
+                         <li class="item_ingrediente">LimónSoda</li>
+                      <li class="item_ingrediente">Bilz</li>
+                        
+                </ul>
+              
+              </div>
+        
+  
+           <!-- Modal footer -->
+                <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+           </div>
+        </div>
+    </div> 
+</div>
+  
+
+  
+<!-- Final Session de modales de Productos -->
+
+
+
+<!-- Inicio de Ingredientes -->
+
+    <section class="footer">
+
+        <!-- <div class="links">
+            <a href="#home" class="btn">Inicio</a>
+            <a href="#menu" class="btn">Menú</a>
+            <a href="#about" class="btn">Nosotros</a>
+            <a href="#reviews" class="btn">Testimonios</a>
+            <a href="#contact" class="btn">Contacto</a>
+            <a href="#blogs" class="btn">Promosiones</a>
+        </div> -->
+
+        <p class="credit"> Diseño - Adaptación | <a style="text-decoration: none;" href="https://maytechologies.github.io/web_maytech/index.html"><span>MAYTech Soluciones</span> </a>| Desarrollo - Backend </p>
+
+      </section>
+
+ <!-- Final de Ingredientes -->
+    <script src="js/script.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+            <script>
+
+            AOS.init({
+            duration: 800,
+            });
+
+            </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
+     </body>
+    </html>

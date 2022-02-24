@@ -1,0 +1,11 @@
+.tx_img_old{
+    margin-left: -10px;
+    margin-right: 50px;
+}
+
+.imgsmall{
+
+    height: 80px !important;
+    width: 80px !important;
+    border-radius: 50px !important;
+}
