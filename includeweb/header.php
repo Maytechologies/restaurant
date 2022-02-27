@@ -32,7 +32,7 @@
       <span class="space">  </span>
       <a href="#reviews"> Clientes </a>
       <a href="#contact"> Contacto </a>
-      <a href="admin/login.php"> sistema </a>
+      <a href="login.php"> sistema </a>
    </nav>
 
    <a href="#" class="fas fa-shopping-cart icons " style="visibility: hidden;"></a>

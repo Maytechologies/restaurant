@@ -1,7 +1,7 @@
 
 <?php
 
-require '../webincludes/funciones.php';
+require './functions/function.php';
 
 $auth = onlineUser();
 

@@ -38,9 +38,9 @@
 
           <li class="nav-header">SESIONES</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="showTipo.php" class="nav-link">
               <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Clientes</p>
+              <p class="text">Tipo de Producto</p>
             </a>
           </li>
           <li class="nav-item">
@@ -50,9 +50,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="createUser.php" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
               <p>Usuarios</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="createUser.php" class="nav-link">
+              <i class="nav-icon far fa-circle text-white"></i>
+              <p>Datos</p>
             </a>
           </li>
         </ul>
