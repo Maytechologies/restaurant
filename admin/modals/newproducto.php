@@ -36,7 +36,7 @@
                                         <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $tipo; ?>">
 
 
-                                            <option value=" ">Selecionar una opcion</option>
+                                            <option value=" ">Selecionar una Categoria</option>
                                             <?php while ($tipores = mysqli_fetch_assoc($resul_tipo)):?> 
                                                <option <?php echo $tipo === $tipores['id'] ? 'selected': '' ;?> value="<?php echo $tipores['id'];?>"><?php  echo $tipores['tipo_nombre'];?></option>
                                             <?php  endwhile;?>
@@ -68,6 +68,19 @@
                          </div>
 
                          <hr>
+
+                         <div class="form-group">
+                              <label for="categoria" class="form-label">Seleciona Modal :</label>
+                                        <select name="modal_img_id" id="modal_img_id" class="form-control" value="<?php echo $modals; ?>">
+
+
+                                            <option value=" ">Selecionar un Modal</option>
+                                            <?php while ($modal = mysqli_fetch_assoc($resul_modal)):?> 
+                                               <option <?php echo $modals === $modal['id_modal'] ? 'selected': '' ;?> value="<?php echo $modal['id_modal'];?>"><?php  echo $modal['nombre_modal'];?></option>
+                                            <?php  endwhile;?>
+                                          
+                                        </select>
+                         </div>
 
 
 

@@ -18,6 +18,13 @@ require 'config/dbconfig.php';
 $db = conectarDB();
 
 
+//SENTENCIA SQL CONSULTAR REGISTROS IMAGEN_MODAL:
+$modals = "SELECT *FROM modal_producto";
+$resul_modal = mysqli_query($db, $modals);
+
+//---------------------------------------------------//
+
+ 
 //SENTENCIA SQL CONSULTAR REGISTROS TIPOS DE PRODUCTO:
 
 $tipo = "SELECT * FROM tipo_producto";
