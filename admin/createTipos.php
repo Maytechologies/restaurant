@@ -61,7 +61,7 @@ echo "<br>";
     }
 
 
-    if (!$imagen) {
+    if (!$tipo_img) {
         $errores[] = "Una IMAGEN es obligatoria, debes subir una imagen al registro";
     }
 

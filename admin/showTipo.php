@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $propiedadImg = mysqli_fetch_assoc($resultadoImg);
 
 
-        unlink('../imagenes/' . $propiedadImg['imagen']);
+        unlink('uploads/type/' . $propiedadImg['imagen']);
 
 
         //eliminamos el registro relacionado con el id que recibimos por POST
@@ -92,7 +92,7 @@ include 'views/adm_menu.php';
                 <div class="card">
                     <div class="card-header d-flex align-items-center">
                         <div class="col mr-auto">
-                            <h3 class="card-title">Tipos de Productos</h3>
+                            <h3 class="titulo card-title">Tipos de Productos</h3>
                         </div>
                         <div class="row text-nowrap align-items-center">
                             <div class="col">Nuevo Registro</div>
@@ -110,27 +110,28 @@ include 'views/adm_menu.php';
                                     <tr>
                                         <th>N°</th>
                                         <th>NOMBRE</th>
-                                        <th>IMAGEN</th>
-                                        <th>ACCIONES</th>
+                                        <th class="text-center">IMAGEN</th>
+                                        <th class="text-center">ACCIONES</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <?php while ($tipos = mysqli_fetch_assoc($query_pro)) : ?>
 
+
                                         <tr>
                                             <td><?php echo $tipos['id']; ?></td>
 
-                                            <td><?php echo $tipos['tipo_nombre']; ?></td>
+                                            <td class="text-uppercase" ><?php echo $tipos['tipo_nombre']; ?></td>
 
-                                            <td><img src="uploads/type/<?php echo $tipos['tipo_img']; ?>" alt="" height="30px" width="30px"></td>
+                                            <td class="w-2 text-center"><img src="uploads/type/<?php echo $tipos['tipo_img']; ?>" alt="" height="45px" width="45px"></td>
 
                                             <td>
                                                 <div class="row text-center">
 
                                                     <div class="col">
                                                         <!-- VER DETALLES DEL REGISTRO -->
-                                                        <button class="btn btn-primary"><i class="fab fa-wpforms"></i></button>
+                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#viewItem<?php echo $tipos['id']; ?>"><i class="fab fa-wpforms"></i></button>
                                                     </div>
 
                                                     <div class="col mx-0">
@@ -148,31 +149,38 @@ include 'views/adm_menu.php';
                                                 </div>
                                             </td>
                                         </tr>
-                                    <?php endwhile; ?>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Nombre</th>
-                                        <th>Imagen</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
 
-    <!-- /.content -->
+                                       <?php  include 'modals/viewTipoPro.php' ?>
+
+                                   </div>
+
+
+
+                    <?php endwhile; ?>
+                    </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Nombre</th>
+                                    <th>Imagen</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </tfoot>
+                    </table>
+                    </div>   <!-- /.card-body -->
+                  
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+<!-- /.content -->
 </div>
 
 <?php

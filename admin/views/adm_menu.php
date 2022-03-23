@@ -1,11 +1,28 @@
+
+  <?php
+
+      $datos = "SELECT *FROM datos";
+
+      //Visualizamos la consulta SQL
+
+      $query_datos = mysqli_query($db, $datos);
+
+      $resultado_datos = mysqli_fetch_assoc($query_datos);
+
+        /*  echo "<pre>";
+        var_dump($resultado_datos);
+         echo "</pre>"; */
+
+  ?>
+ 
  <!------------------------------------------------------------------>
     <!------------------ Inicio Menu Sidebar --------------------------->
     <!------------------------------------------------------------------>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../../index.php" class="brand-link">
-      <img src="./dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">INMOBILIARIA</span>
+      <img src="uploads/datos/<?php echo $resultado_datos['logo_data']; ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .9">
+      <span class="brand-text font-weight-light text-uppercase" ><?php echo $resultado_datos['name_data'];?></span>
     </a>
 
 
@@ -44,7 +61,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="showProductos.php" class="nav-link">
               <i class="nav-icon far fa-circle text-warning"></i>
               <p>Productos</p>
             </a>
@@ -56,7 +73,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="createUser.php" class="nav-link">
+            <a href="regDatos.php" class="nav-link">
               <i class="nav-icon far fa-circle text-white"></i>
               <p>Datos</p>
             </a>

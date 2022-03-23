@@ -10,6 +10,8 @@ $auth = onlineUser();
 
 //verificamos que exista usuario autenticado de no ser asi redirigir al sitio web
 
+
+
 if (!$auth) {
     header('Location: ../index.php');
 }
@@ -35,12 +37,14 @@ $resultadotipo = mysqli_query($db, $consultatipo);
 $tipo = mysqli_fetch_assoc($resultadotipo);
 
 
-/*  echo "<pre>";
+ echo "<pre>";
 var_dump($tipo);
 echo "</pre>";
 
-exit;   
- */
+echo "<br>";
+
+   
+ 
 echo "<br>";
 
 //CONSULTAMOS LA TABLA ESTADO RELACIONADA CON TIPO_PRODUCTO
@@ -60,7 +64,7 @@ exit;   */
 //ARREGLO PARA LOS MENSAJES DE ERRORES EN LOS INPUT DEL FORMULARIO
 $errores = [];
 
-//ASIGNAMOS VALORES DE LA CONSULTA PROPIEDADES A  VARIABLES PARA ASIGNAR UN VALOR A LO INPUT
+//ASIGNAMOS VALORES DE LA CONSULTA PROPIEDADES A  VARIABLES PARA ASIGNAR UN VALOR Al INPUT
 
 $tipo_nombre       = $tipo['tipo_nombre'];
 $tipo_img          = $tipo['tipo_img'];
@@ -140,8 +144,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombreImagen = $tipo['tipo_img']; //SI NO EXITE IMAGEN NUEVA CONSERVA LA IMAGEN ACTUAL
         }
 
-
+        /****************************************************/
         //SENTENCIA SQL PARA APLICAR UN UPDATE DATOS A LA DB
+        /****************************************************/
 
         $query = "UPDATE tipo_producto SET tipo_nombre = '${tipo_nombre}', tipo_img = '${nombreImagen}', estado = '${estado}' WHERE id= ${id} ";
 
@@ -202,7 +207,7 @@ include 'views/adm_menu.php';
 
 
     <!-- Contenido Principal -->
-    <div class="container">
+    <div class="container col-10 bg-white">
         <section class="content">
 
             <!-- Default box -->
@@ -253,7 +258,7 @@ include 'views/adm_menu.php';
 
                                         </select>
                                     </div>
-                            </div>
+                        </div>
 
 
                     </div>
@@ -264,19 +269,12 @@ include 'views/adm_menu.php';
                                 <label class="tx_img_old" for="imagen_tag">Imagen Actual :</label>
                                  <img class="imgsmall" src="uploads/type/<?php echo $tipo['tipo_img']; ?>" alt="">
                             </div>
-                            <div class="col-sm-6">
-                                <input type="file" class="form-control border-0" id="imagen" name="imagen" placeholder="Imagen de la Propiedad" accept="image/jpeg, image/png, image/webp"">
+                            <div class="col-sm-4">
+                                <input type="file" style="border: none;" class="form-control border-0" id="imagen" name="imagen" placeholder="Imagen de la Propiedad" accept="image/jpeg, image/png, image/webp"">
                             </div>
                         </div>    
                       </div>
                   </div> <!-- end row -->
-
-
-
-
-
-
-                        
 
                         <div class="card-footer d-flex justify-content-center">
                             <div class="row">

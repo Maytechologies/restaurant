@@ -70,7 +70,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #f4f6f9!important;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -2175,6 +2175,7 @@ pre code {
   .table-responsive-lg > .table-bordered {
     border: 0;
   }
+  
 }
 
 @media (max-width: 1199.98px) {
@@ -5194,14 +5195,15 @@ input[type="button"].btn-block {
 
 .card-img,
 .card-img-top {
-  border-top-left-radius: calc(0.25rem - 0);
-  border-top-right-radius: calc(0.25rem - 0);
+  border-top-left-radius: calc(0.20rem - 0);
+  border-top-right-radius: calc(0.20rem - 0);
 }
 
 .card-img,
 .card-img-bottom {
   border-bottom-right-radius: calc(0.25rem - 0);
   border-bottom-left-radius: calc(0.25rem - 0);
+  
 }
 
 .card-deck .card {
@@ -14740,6 +14742,8 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   .sidebar-mini .nav-sidebar .nav-link {
     white-space: nowrap;
   }
+
+  
   .sidebar-mini.sidebar-collapse .d-hidden-mini {
     display: none;
   }
@@ -52425,3 +52429,5 @@ a.text-muted:hover {
 .table .tablag thead{
   background-color: var(--gray) !important;
 }
+
+
