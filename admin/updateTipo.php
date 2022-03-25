@@ -34,10 +34,10 @@ $db = conectarDB();
 //CONSULTAMOS EN DB LA TABLA PROPIEDADES SEGUN EL ID RECIBIDO
 $consultatipo = "SELECT *FROM tipo_producto WHERE id = ${id}";
 $resultadotipo = mysqli_query($db, $consultatipo);
-$tipo = mysqli_fetch_assoc($resultadotipo);
+$tipo = mysqli_fetch_assoc($resultadotipo); 
 
 
- echo "<pre>";
+ /* echo "<pre>";
 var_dump($tipo);
 echo "</pre>";
 
@@ -45,7 +45,7 @@ echo "<br>";
 
    
  
-echo "<br>";
+echo "<br>"; */
 
 //CONSULTAMOS LA TABLA ESTADO RELACIONADA CON TIPO_PRODUCTO
 $estado = "SELECT * FROM estado";

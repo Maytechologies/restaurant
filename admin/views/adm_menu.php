@@ -61,6 +61,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="modalProducto.php" class="nav-link">
+              <i class="nav-icon far fa-circle text-success"></i>
+              <p class="text">Modal Producto</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="showProductos.php" class="nav-link">
               <i class="nav-icon far fa-circle text-warning"></i>
               <p>Productos</p>

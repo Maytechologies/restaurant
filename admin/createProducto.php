@@ -31,7 +31,11 @@ echo "</pre>";
 
 echo "<br>";
 
-exit;  */
+echo "<pre>";
+var_dump($_FILES);
+echo "</pre>";
+
+exit;   */
 
 
 
@@ -43,6 +47,7 @@ exit;  */
     $precio        = mysqli_real_escape_string($db, $_POST['precio']);
     $ingredientes  = mysqli_real_escape_string($db, $_POST['ingredientes']);
     $tipo_id       = mysqli_real_escape_string($db, $_POST['tipo_id']);
+    $modal_img_id  = mysqli_real_escape_string($db, $_POST['modal_img_id']);
     $creado        = date('Y/m/d');
 
 
@@ -111,17 +116,17 @@ exit;  */
 
     //SENTENCIA SQL PARA INSERTAR DATOS A LA DB
 
-     $query = "INSERT INTO productos ( nombre, precio, ingredientes, tipo_id, creado, small_img )
-     VALUE ( '$nombre', '$precio', '$ingredientes', '$tipo_id', '$creado', '$nombreImagen' )";
+     $query = "INSERT INTO productos ( nombre, precio, ingredientes, tipo_id, modal_img_id, creado, small_img )
+     VALUE ( '$nombre', '$precio', '$ingredientes', '$tipo_id', '$modal_img_id', '$creado', '$nombreImagen' )";
 
-        //GUARDAMOS LA CONSULTA SQL  INSERT EN UNA VARIABLE
+    //GUARDAMOS LA CONSULTA SQL  INSERT EN UNA VARIABLE
 
         $resultado_insert = mysqli_query($db, $query);
 
-        /*  echo "<pre>";
+         /* echo "<pre>";
          var_dump($query);
          echo "</pre>";
-         exit;  */   
+         exit;   */  
          
 
 

@@ -34,19 +34,35 @@ $resul_tipo = mysqli_query($db, $tipo);
 /* var_dump($tipopro);
 exit; */
 
+
+//----------------------------------------------------------------//
+
+//CONSULTA MULTITABLA INNER JOIN SLQ
+
+$productos = "SELECT * FROM productos as p
+INNER JOIN modal_producto as m
+ON p.modal_img_id = m.id_modal";
+
+$resulAllProductos = mysqli_query($db, $productos);
+/* $ProductosAll = mysqli_fetch_assoc($resulAllProductos); */
+
+//----------------------------------------------------------------//
+
+
+
 //----Consulta para el modal newproducto.php----//
 
 
 //sentencia SQL consultar registros de productos
-$productos = "SELECT *FROM productos";
+/* $productos = "SELECT *FROM productos"; */
 
 //Visualizamos la consulta SQL que usaremos en la tabla
 
-$query_prod = mysqli_query($db, $productos);
+/* $query_prod = mysqli_query($db, $productos); */
 
 
 //Visualizamos la consulta SQL que usaremos en el select de (imgModal)
-$prod_modal = mysqli_query($db, $productos);
+ $prod_modal = mysqli_query($db, $productos); 
 
 
 //VALIDAMOS LO QUE LLEGUE POR GET
@@ -150,9 +166,7 @@ include 'views/adm_menu.php';
                                 </thead>
                                 <tbody>
 
-                                <?php while ($productos = mysqli_fetch_assoc($query_prod)): ?>
-
-
+                               <?php while ($productos = mysqli_fetch_assoc($resulAllProductos)): ?>
                                         <tr>
                                             <td><?php echo $productos['id']; ?></td>
 
@@ -167,19 +181,8 @@ include 'views/adm_menu.php';
 
                                                     <div class="col">
                                                         <!-- VER DETALLES DEL REGISTRO -->
-
-                                                        <form method="POST">
-                                                            <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
-                                                            <button class="btn btn-primary" data-toggle="modal" data-target="#updateproducto<?php echo $productos['id']; ?>"><i class="fab fa-wpforms"></i></button>
-                                                        </form>
-                                                       
+                                                            <button class="btn btn-primary" data-toggle="modal" data-target="#modalficha<?php echo $productos['id']; ?>"><i class="fab fa-wpforms"></i></button>
                                                     </div>
-
-                                                    <div class="col">
-                                                        <!-- VER DETALLES DEL REGISTRO -->
-                                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#modalimg<?php echo $productomodal['id']; ?>"><i class="fas fa-image"></i></button>
-                                                    </div>
-
 
                                                     <div class="col mx-0">
                                                         <!-- EDITAR REGISTRO -->
@@ -199,6 +202,7 @@ include 'views/adm_menu.php';
 
                                      
                                         <?php include 'modals/updateProducto.php' ?>
+                                        <?php include 'modals/fichaProducto.php' ?>
                                     
                                     
 
