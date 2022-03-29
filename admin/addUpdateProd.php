@@ -9,7 +9,7 @@ $db = conectarDB();
 
 
 
-    echo "<pre>";
+    /* echo "<pre>";
     var_dump($_POST);
     echo "</pre>";
 
@@ -19,13 +19,14 @@ $db = conectarDB();
     var_dump($_FILES);
     echo "</pre>";
 
+    exit; */
 
 
 
-  $id = $_POST['id'];
+   $id = $_POST['id'];
   $consulproducto = "SELECT *FROM productos WHERE id = ${id}";
   $queryproducto = mysqli_query($db, $consulproducto);
-  $productos = mysqli_fetch_assoc($queryproducto);
+  $productos = mysqli_fetch_assoc($queryproducto); 
 
   
 
@@ -47,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tipo_id         = mysqli_real_escape_string($db, $_POST['tipo_id']);
     $ingredientes    = mysqli_real_escape_string($db, $_POST['ingredientes']);
     $estado          = mysqli_real_escape_string($db, $_POST['estado']);
+    $modal_img_id    = mysqli_real_escape_string($db, $_POST['modal_img_id']);      
     $creado          = mysqli_real_escape_string($db, $_POST['creado']);
 
 
@@ -115,13 +117,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         small_img = '${nombreImagen}',
                                         precio = ${precio},
                                         ingredientes = '${ingredientes}',
-                                        modal_img_id = NULL,
+                                        modal_img_id = '${modal_img_id}',
                                         tipo_id = ${tipo_id},
                                         estado = ${estado},
                                         creado = '${creado}' WHERE id = ${id} ";
 
-  /*       var_dump($query);
-        exit;  */
+       /*  var_dump($query);
+        exit;   */
 
         /* UPDATE `productos` SET `id`= 1,`nombre`='perro bulldog',`small_img`='imagen.jpg',`precio`= 1500,`ingredientes`='ingredientea, ingredienteB, ingredienteC,',`modal_img_id`= , NULL,`tipo_id`= 2,`estado`= 1 WHERE id = 1; */
 

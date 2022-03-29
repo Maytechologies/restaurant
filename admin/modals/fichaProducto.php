@@ -29,8 +29,8 @@
 
                           
 
-                            <div class="form-group">
-                                   <div class="row d-flex align-items-center">
+                                   <div class="form-group">
+                                       <div class="row d-flex align-items-center">
                                           <div class="col-4 m-0">
                                                 <label for="precio">Precio :</label>
                                                     <input type="number" class="form-control " id="precio" name="precio"  value="<?= $productos ['precio'];?>" disabled>

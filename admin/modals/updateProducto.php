@@ -5,8 +5,13 @@
 $tipo = "SELECT * FROM tipo_producto";
 $resul_tipo = mysqli_query($db, $tipo);
 
-//posteriormente realizamos la consulta desde el formulario
+/* echo "<pre>";
+var_dump($productos);
+echo "</pre>";  */
 
+//SENTENCIA SQL CONSULTAR REGISTROS IMAGEN_MODAL:
+$modals = "SELECT *FROM modal_producto";
+$resul_modal = mysqli_query($db, $modals);
 ?>
 
 <!-- Modal -->
@@ -35,23 +40,25 @@ $resul_tipo = mysqli_query($db, $tipo);
                                               <input type="text" class="form-control" name="nombre" placeholder="Nombre del Producto" value="<?= $productos ['nombre'];?>">                                
                                       </div> 
                                   </div>
-  
-                           <div class="form-group">
-                               <div class="col col-md-6">
-                                  <label for="precio">Precio :</label>
-                                      <input type="number" class="form-control w-100" id="precio" name="precio" placeholder="precio" value="<?= $productos ['precio'];?>">
-                                  </div>
-                                                             
-                        </div>
+          
+                                  <div class="form-group">
+                                      <div class="col col-md-6">
+                                          <label for="precio">Precio :</label>
+                                              <input type="number" class="form-control w-100" id="precio" name="precio" placeholder="precio" value="<?= $productos ['precio'];?>">
+                                          </div>
+                                                                    
+                                </div>
                           </div>
+
+                            
   
                            <div class="form-group">
                            <label for="categoria" class="form-label">Categoria :</label>
 
-                                          <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $productos; ?>">
+                                          <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $tipo; ?>">
                                               <option value=" ">Selecionar una Opción</option>
                                               <?php while ($tipopro = mysqli_fetch_assoc($resul_tipo)):?> 
-                                                 <option <?php echo $productos === $tipopro['id'] ? 'selected': '' ;?> value="<?php echo $tipopro['id'];?>"><?php  echo $tipopro['tipo_nombre'];?></option>
+                                                 <option <?php echo $tipo === $tipopro['id'] ? 'selected': '' ;?> value="<?php echo $tipopro['id'];?>"><?php  echo $tipopro['tipo_nombre'];?></option>
                                               <?php  endwhile;?>
 
 
@@ -87,6 +94,21 @@ $resul_tipo = mysqli_query($db, $tipo);
                                </div>
                            </div>
                          </div>
+                         <hr>
+
+                         <div class="form-group">
+                              <label for="categoria" class="form-label">Imagen Modal:</label>
+                                        <select name="modal_img_id" id="modal_img_id" class="form-control" value="<?php echo $modals; ?>">
+
+
+                                            <option value=" ">Selecionar un Modal</option>
+                                            <?php while ($modal = mysqli_fetch_assoc($resul_modal)):?> 
+                                               <option <?php echo $modals === $modal['id_modal'] ? 'selected': '' ;?> value="<?php echo $modal['id_modal'];?>"><?php  echo $modal['nombre_modal'];?></option>
+                                            <?php  endwhile;?>
+                                          
+                                        </select>
+                         </div>
+
   
         
       

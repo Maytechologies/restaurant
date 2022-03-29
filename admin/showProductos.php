@@ -22,35 +22,33 @@ $db = conectarDB();
 $modals = "SELECT *FROM modal_producto";
 $resul_modal = mysqli_query($db, $modals);
 
-//---------------------------------------------------//
+//-------------------------------------------------------------//
+//---SENTENCIA SQL CONSULTAR REGISTROS TIPOS DE PRODUCTO:-----//
+//-------------------------------------------------------------//
 
- 
-//SENTENCIA SQL CONSULTAR REGISTROS TIPOS DE PRODUCTO:
-
-$tipo = "SELECT * FROM tipo_producto";
-$resul_tipo = mysqli_query($db, $tipo);
-/* $tipopro = mysqli_fetch_assoc($resul_tipo); */
+ $tipo = "SELECT * FROM tipo_producto";
+$resul_tipo = mysqli_query($db, $tipo); 
+/* $tipoprod = mysqli_fetch_assoc($resul_tipo); */
 
 /* var_dump($tipopro);
 exit; */
 
 
 //----------------------------------------------------------------//
-
-//CONSULTA MULTITABLA INNER JOIN SLQ
+//----------CONSULTA MULTITABLA INNER JOIN SLQ--------------------//
+//----------------------------------------------------------------//
 
 $productos = "SELECT * FROM productos as p
 INNER JOIN modal_producto as m
 ON p.modal_img_id = m.id_modal";
 
+
 $resulAllProductos = mysqli_query($db, $productos);
 /* $ProductosAll = mysqli_fetch_assoc($resulAllProductos); */
 
 //----------------------------------------------------------------//
-
-
-
-//----Consulta para el modal newproducto.php----//
+//-----------Consulta para el modal newproducto.php--------------//
+//----------------------------------------------------------------//
 
 
 //sentencia SQL consultar registros de productos
@@ -85,9 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($id) {
         //Eliminamos la imagen relacionada con nuestro id recibido por POST
         $queryImg = "SELECT small_img FROM productos WHERE id = ${id}";
-
         $resultadoImg = mysqli_query($db, $queryImg);
-
         $propiedadImg = mysqli_fetch_assoc($resultadoImg);
 
 

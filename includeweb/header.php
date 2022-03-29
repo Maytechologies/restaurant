@@ -1,4 +1,13 @@
 
+
+<?php 
+
+include 'admin/config/dbconfig.php';
+
+$bd = conectarDB();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

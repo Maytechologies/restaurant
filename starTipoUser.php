@@ -7,14 +7,14 @@ $db = conectarDB();
 
 //creamos tipo de usuario root
 
-$id_tipo_user = '1' ;
+$id = '1' ;
 
 $tipo_user_name = 'root';
 
 
 // creamos la consulta SQL la cual creara la sentencia SQL Insert
 
-$inser_tipo = "INSERT INTO tipo_usuario (id_tipo_user, type_user_name) VALUE ('${id_tipo_user}', '${tipo_user_name}')";
+$inser_tipo = "INSERT INTO tipo_usuario (id, name_tip_user) VALUE ('${id}', '${tipo_user_name}')";
 
 //Ejecutamos la sentencia SQL
 
