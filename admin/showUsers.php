@@ -34,13 +34,43 @@ $queryAllUser = mysqli_query($db, $users);
 //-------------------------------------------------------------//
 
 $tipou = "SELECT * FROM tipo_usuario";
-$resul_tipou = mysqli_query($db, $tipou); 
+$resul_tipou = mysqli_query($db, $tipou); // este query lo aplicamos en la etiqueta select del formulario de registro
+
+/******************************************/
+/*======== ELIMINAR UN REGSITRO===========*/
+/******************************************/
+
+//COMPROBANDO LO QUE VIAJA POR EL POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['id'];
+    $id = filter_var($id, FILTER_VALIDATE_INT);
 
 
-//incluimos las vistas header y menua de nuestros template admin
+    if ($id) {
+        //Eliminamos la imagen relacionada con nuestro id recibido por POST
+        $queryUser = "SELECT photo FROM usuarios WHERE id = ${id}";
+        $resultadoUser = mysqli_query($db, $queryUser);
+        $DelUser = mysqli_fetch_assoc($resultadoUser);
+
+
+        unlink('uploads/Users/' . $DelUser['photo']);
+
+
+        //eliminamos el registro relacionado con el id que recibimos por POST
+        $query = "DELETE FROM usuarios WHERE id = ${id}";
+
+        $resultado = mysqli_query($db, $query);
+
+        if ($resultado) {
+            header('location: showUsers.php?registro=3');
+            
+        }
+    }
+}
+
+
+//incluimos las vistas header y menu de nuestros template admin
 include 'views/adm_header.php';
-
-
 include 'views/adm_menu.php';
 
 ?>
@@ -62,20 +92,13 @@ include 'views/adm_menu.php';
                     <div class="card-header">
                         <div class="col mr-auto">
                             <h3 class="titulo card-title">Listado de Usuarios</h3>
-                        </div>
+                               </div>
                           
-                        <div class="row d-flex justify-content-end">
-                                <div class="row text-nowrap align-items-center">
-                                    <div class="col">Nuevo Modal :</div>
-                                    <div class="col"><button class="btn btn-info mr-5 ml-0" data-toggle="modal" data-target="#nuevomodal"><i class="fas fa-image"></i></button></div>
-                                    
-                                </div>
-
-                                <div class="row text-nowrap align-items-center">
-                                     <div class="col">Nuevo Registro :</div>
+                                        <div class="row d-flex justify-content-end"> 
+                                      <div class="row text-nowrap align-items-center">
+                                     <div class="col">Nuevo Usuario :</div>
                                     <div class="col"><button class="btn btn-success" data-toggle="modal" data-target="#nuevousuario"><i class="fas fa-plus-circle"></i></button></div>
                                     <?php  include 'modals/newuser.php' ?>
-                            
                                 </div>
                                
                         </div>
@@ -103,7 +126,7 @@ include 'views/adm_menu.php';
                                     <tr>
                                         <td><?php echo $usuarios['id']; ?></td>
 
-                                        <td class="w-2 text-center"><img src="uploads/users/<?php echo $usuarios['photo']; ?>" alt="" height="45px" width="45px"></td>
+                                        <td class="w-2 text-center"><img class="imgsmall" src="uploads/users/<?php echo $usuarios['photo']; ?>"></td>
 
                                         <td class="text-uppercase" ><?php echo $usuarios['user_name']; ?></td>
 
@@ -117,33 +140,28 @@ include 'views/adm_menu.php';
 
                                                 <div class="col">
                                                     <!-- VER DETALLES DEL REGISTRO -->
-                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalficha<?php echo $usuarios['id']; ?>"><i class="fab fa-wpforms"></i></button>
-                                                </div>
+                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalfichaUser<?php echo $usuarios['id']; ?>"><i class="fab fa-wpforms"></i></button>
+                                                          </div>
 
-                                                <div class="col mx-0">
-                                                    <!-- EDITAR REGISTRO -->
-                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#updateproducto<?php echo $usuarios['id']; ?>"><i class="fas fa-edit"></i></button>                                
-                                                </div>
+                                                             <div class="col mx-0">
+                                                                <!-- EDITAR REGISTRO -->
+                                                                 <button class="btn btn-warning" data-toggle="modal" data-target="#updateUser<?php echo $usuarios['id']; ?>"><i class="fas fa-edit"></i></button>                                
+                                                                </div>
 
-                                                <div class="col mx-0">
-                                                    <!-- ELIMINAR REGISTRO -->
-                                                    <form method="POST">
-                                                        <input type="hidden" name="id" value="<?php echo $usuarios['id']; ?>">
-                                                        <button type="submit" class="buttondl btn btn-danger"><i class="fas fa-trash"></i></button>
-                                                    </form>
-                                                </div>
+                                                                <div class="col mx-0">
+                                                               <!-- ELIMINAR REGISTRO -->
+                                                               
+                                                                  <button class="buttondl btn btn-danger" data-toggle="modal" data-target="#eliminar<?php echo $usuarios['id']; ?>"><i class="fas fa-trash"></i></button>
+                                                               
+                                                            
+                                                    </div>
                                             </div>
                                         </td>
-                                    </tr>
-
-                                    
-                                    <?php  include 'modals/newUser.php' ?>
-
-                               </div> <!-- End Card Body -->
-
-
-
-                               <?php endwhile; ?>
+                                    </tr>   
+                                <?php  include 'modals/newUser.php' ?>
+                             <?php  include 'modals/deleteUser.php' ?>
+                         </div> <!-- End Card Body -->
+                     <?php endwhile; ?>
                 </tbody>
                 <tfoot>
                     <tr>

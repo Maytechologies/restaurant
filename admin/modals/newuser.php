@@ -1,7 +1,7 @@
  
 
 <!------------------------------------->
-<!------ Modal NewUser -------->
+<!---------- Modal NewUser ------------>
 <!------------------------------------->
 <div class="modal fade" id="nuevousuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -15,42 +15,42 @@
                           <form action="createUser.php" method="POST" enctype="multipart/form-data">
                             
                           <div class="row">
+                                        <div class="col col-6">
+                                            <div class="form-group">
+                                                <label for="nombre">Nombre :</label>
+                                                    <input type="text" class="form-control" name="user_name" placeholder="Nombre del usuario">                                
+                                            </div> 
+                                        </div>
+                                        <div class="col col-6">
+                                            <div class="form-group">
+                                                    <label for="precio">email :</label>
+                                                    <input type="mail" class="form-control w-100" id="email" name="email" placeholder="Insertar email">
+                                            </div>
+                                                                        
+                                        </div>
+
+                                        <div class="col col-6">
+                                            <div class="form-group">
+                                            
+                                                    <label for="precio">Password :</label>
+                                                    <input type="password" class="form-control w-100" id="password" name="password" placeholder="Insertar password">
+                                            </div>
+                                                                        
+                                        </div>
+
                                 <div class="col col-6">
                                     <div class="form-group">
-                                        <label for="nombre">Nombre :</label>
-                                            <input type="text" class="form-control" name="user_name" placeholder="Nombre del usuario">                                
-                                    </div> 
+                                          <label for="categoria" class="form-label">Perfil :</label>
+                                                    <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $tipou; ?>">
+
+                                                            <option value=" ">Selecionar una opcion</option>
+                                                            <?php while ($tipousers = mysqli_fetch_assoc($resul_tipou)):?> 
+                                                            <option <?php echo $tipou === $tipousers['id'] ? 'selected': '' ;?> value="<?php echo $tipousers['id'];?>"><?php  echo $tipousers['name_tip_user'];?></option>
+                                                            <?php  endwhile;?>
+                                                    
+                                                    </select>
+                                        </div>
                                 </div>
-                          <div class="col col-6">
-                            <div class="form-group">
-                                    <label for="precio">email :</label>
-                                    <input type="mail" class="form-control w-100" id="email" name="email" placeholder="Insertar email">
-                            </div>
-                                                           
-                         </div>
-
-                         <div class="col col-6">
-                            <div class="form-group">
-                             
-                                    <label for="precio">Password :</label>
-                                    <input type="password" class="form-control w-100" id="password" name="password" placeholder="Insertar password">
-                            </div>
-                                                           
-                         </div>
-
-                         <div class="col col-6">
-                            <div class="form-group">
-                                <label for="categoria" class="form-label">Perfil :</label>
-                                            <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $tipou; ?>">
-
-                                                    <option value=" ">Selecionar una opcion</option>
-                                                    <?php while ($tipousers = mysqli_fetch_assoc($resul_tipou)):?> 
-                                                    <option <?php echo $tipou === $tipousers['id'] ? 'selected': '' ;?> value="<?php echo $tipousers['id'];?>"><?php  echo $tipousers['name_tip_user'];?></option>
-                                                    <?php  endwhile;?>
-                                            
-                                            </select>
-                                </div>
-                         </div>
 
 
                           </div>

@@ -3,10 +3,14 @@
     margin-right: 50px;
 }
 
+.titulo {
+    color: rgb(63, 62, 62) !important;
+}
+
 .imgsmall{
 
-    height: 80px !important;
-    width: 80px !important;
+    height: 40px !important;
+    width: 40px !important;
     border-radius: 50px !important;
 }
 
