@@ -1,5 +1,9 @@
 <?php
 
+//-------------------------------------------------------------//
+//-------SESION LISTADO DE USUARIOS - > showUsers.php----------//
+//-------------------------------------------------------------//
+
 require './functions/function.php';
 
 
@@ -22,7 +26,7 @@ $db = conectarDB();
 
 //seleccionamos el listado de usuarios de la tabla user
 
-$users = "SELECT u.id, u.user_name, u.email, u.photo, tp.name_tip_user as perfil 
+$users = "SELECT u.id, u.user_name, u.email, u.password, u.photo, tp.name_tip_user as perfil, u.tipo_id
 FROM usuarios as u INNER JOIN tipo_usuario as tp ON u.tipo_id = tp.id";
 
 $queryAllUser = mysqli_query($db, $users);
@@ -30,7 +34,7 @@ $queryAllUser = mysqli_query($db, $users);
 /* var_dump($resulUser); */
 
 //-------------------------------------------------------------//
-//---SENTENCIA SQL CONSULTAR REGISTROS TIPOS DE PRODUCTO:-----//
+//---SENTENCIA SQL CONSULTAR REGISTROS TIPOS DE USUARIOS:------//
 //-------------------------------------------------------------//
 
 $tipou = "SELECT * FROM tipo_usuario";
@@ -104,8 +108,6 @@ include 'views/adm_menu.php';
                         </div>
                         
                     </div>
-               
-                <hr>
 
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -120,7 +122,7 @@ include 'views/adm_menu.php';
                                     <th class="text-center">ACCIONES</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                          <tbody>
 
                             <?php while ($usuarios = mysqli_fetch_assoc($queryAllUser)): ?>
                                     <tr>
@@ -132,62 +134,49 @@ include 'views/adm_menu.php';
 
                                         <td class="text-uppercase" ><?php echo $usuarios['email']; ?></td>
 
+                                         <input type="hidden" name="password" value="<?php echo $usuarios['password']; ?>">
+                                         <input type="hidden" name="perfil" value="<?php echo $usuarios['perfil']; ?>">
+                                         <input type="hidden" name="tipo_id" value="<?php echo $usuarios['tipo_id']; ?>">
+                                       
 
                                         <td class="text-uppercase text-center" ><?php echo $usuarios['perfil']; ?></td>
 
                                         <td>
                                             <div class="row text-center">
-
-                                                <div class="col">
-                                                    <!-- VER DETALLES DEL REGISTRO -->
-                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalfichaUser<?php echo $usuarios['id']; ?>"><i class="fab fa-wpforms"></i></button>
-                                                          </div>
-
                                                              <div class="col mx-0">
                                                                 <!-- EDITAR REGISTRO -->
-                                                                 <button class="btn btn-warning" data-toggle="modal" data-target="#updateUser<?php echo $usuarios['id']; ?>"><i class="fas fa-edit"></i></button>                                
-                                                                </div>
+                                                                <button class="btn btn-warning" data-toggle="modal" data-target="#updateUser<?php echo $usuarios['id']; ?>"><i class="fas fa-edit"></i></button>                           
+                                                              </div>
 
                                                                 <div class="col mx-0">
-                                                               <!-- ELIMINAR REGISTRO -->
-                                                               
+                                                                  <!-- ELIMINAR REGISTRO -->
                                                                   <button class="buttondl btn btn-danger" data-toggle="modal" data-target="#eliminar<?php echo $usuarios['id']; ?>"><i class="fas fa-trash"></i></button>
-                                                               
-                                                            
-                                                    </div>
-                                            </div>
-                                        </td>
-                                    </tr>   
-                                <?php  include 'modals/newUser.php' ?>
+                                                               </div>
+                                                </div>
+                                            </div>   
+                                  <?php  include 'modals/newUser.php' ?>
                              <?php  include 'modals/deleteUser.php' ?>
+                             <?php  include 'modals/updateUser.php' ?>
                          </div> <!-- End Card Body -->
                      <?php endwhile; ?>
                 </tbody>
                 <tfoot>
-                    <tr>
+                     <tr>
                         <th>Item</th>
-                        <th class="text-center">foto</th>
-                        <th>Nombre</th>
-                        <th>Correo Eléctronico</th>
-                        <th class="text-center" >Perfil</th>
-                        <th>Acciones</th>
-                    </tr>
-                </tfoot>
-                </table>
-                <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
-</div>
-<!-- /.container-fluid -->
-</section>
-<!-- /.content -->
-
-<!-- /.content -->
-</div>
+                             <th class="text-center">foto</th>
+                                    <th>Nombre</th>
+                                    <th>Correo Eléctronico</th>
+                                <th class="text-center" >Perfil</th>
+                            <th>Acciones</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    </div> <!-- /.card-body -->
+                </div> <!-- /.col --> 
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section><!-- /.content -->
+</div><!-- /.content -->
 
 <?php
 

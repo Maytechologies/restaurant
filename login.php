@@ -9,9 +9,7 @@
 
  if ($_SERVER['REQUEST_METHOD']==='POST') {
      
-        /* echo "<pre>";
-         var_dump($_POST);
-         echo "</pre>"; */
+    
         
          
     //Sanetizamos los datos recibidos mediante POST
@@ -59,7 +57,11 @@
 
                 $_SESSION['user'] = $usuario['user_name'];
                 $_SESSION['email'] = $usuario['email'];
+                $_SESSION['photo'] = $usuario['photo'];
+                $_SESSION['tipo_id'] = $usuario['tipo_id'];
                 $_SESSION['login'] = true;
+
+                
                 
             }else {
                 echo "<script>alert('El Password no existe!')
@@ -79,12 +81,8 @@
 
 
     }
-    
-    /*  echo "<pre>";
-     var_dump($errores);
-     echo "</pre>"; */
 
- }
+  }
 
 ?>
 
@@ -122,7 +120,10 @@
 
       <form method="POST">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email" id="email" name="email" require>
+        <input type="hidden" class="form-control" id="email" name="user_name">
+          <input type="hidden" class="form-control" id="email" name="photo">
+          <input type="hidden" class="form-control" id="email" name="tipo_id">
+          <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -130,7 +131,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" id="password" name="password" require>
+          <input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>

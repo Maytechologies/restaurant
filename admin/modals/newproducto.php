@@ -18,14 +18,14 @@
                                 <div class="col col-6">
                                     <div class="form-group">
                                         <label for="nombre">Nombre :</label>
-                                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del Producto">                                
+                                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del Producto" required="">                                
                                     </div> 
                                 </div>
 
                          <div class="form-group">
                              <div class="col col-md-6">
                                 <label for="precio">Precio :</label>
-                                    <input type="number" class="form-control w-100" id="precio" name="precio" placeholder="precio">
+                                    <input type="number" class="form-control w-100" id="precio" name="precio" placeholder="precio" required="">
                                 </div>
                                                            
                          </div>
@@ -33,10 +33,10 @@
 
                          <div class="form-group">
                          <label for="categoria" class="form-label">Categoria :</label>
-                                        <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $tipo; ?>">
+                                        <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $tipo; ?>" required="">
 
 
-                                            <option value=" ">Selecionar una Categoria</option>
+                                            <option value=" " required="">Selecionar una Categoria</option>
                                             <?php while ($tipores = mysqli_fetch_assoc($resul_tipo)):?> 
                                                <option <?php echo $tipo === $tipores['id'] ? 'selected': '' ;?> value="<?php echo $tipores['id'];?>"><?php  echo $tipores['tipo_nombre'];?></option>
                                             <?php  endwhile;?>
@@ -52,7 +52,7 @@
 
                                  <div class="col col-sm-8">
                                  
-                                   <textarea class="form-control" name="ingredientes" id="ingredientes" name="ingredientes" placeholder="ingredientes del producto" cols="40"></textarea>
+                                   <textarea class="form-control" name="ingredientes" id="ingredientes" name="ingredientes" placeholder="ingredientes del producto" cols="40" required=""></textarea>
                                  </div>
                              </div>
                                                            
@@ -63,7 +63,7 @@
                          <div class="row">
                              <div class="form-group">
                              <label for="logo_data">Imagen :</label>
-                                <input type="file" style="border: none;" class="form-control border-0" id="small_img" name="small_img" placeholder="" accept="image/jpeg, image/png, image/webp">
+                                <input type="file" style="border: none;" class="form-control border-0" id="small_img" name="small_img" accept="image/jpeg, image/png, image/webp" required="">
                              </div>
                          </div>
 
@@ -71,7 +71,7 @@
 
                          <div class="form-group">
                               <label for="categoria" class="form-label">Seleciona Modal :</label>
-                                        <select name="modal_img_id" id="modal_img_id" class="form-control" value="<?php echo $modals; ?>">
+                                        <select name="modal_img_id" id="modal_img_id" class="form-control" value="<?php echo $modals; ?>" required="">
 
 
                                             <option value=" ">Selecionar un Modal</option>

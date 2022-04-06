@@ -71,6 +71,7 @@
  //VALIDAMOS LO QUE LLEGUE POR GET
  $registro = $_GET['registro'] ?? null; //Aplicar a la variable regitro el valor recibido por GET si no exite marcarlo como null
  $update = $_GET['update'] ?? null; //Aplicar a la variable regitro el valor recibido por GET si no exite marcarlo como null
+ $error = $_GET['error'] ?? null; //Aplicar a la variable regitro el valor recibido por GET si no existe marcarlo como null
   
   ?>
   <!---------------Final Header Principal--------------------->

@@ -1,5 +1,5 @@
 <!------------------------------------->
-<!------ Modal createUser.PHP --------->
+<!--------  createUser.PHP ------------>
 <!------------------------------------->
 
 <?php
@@ -26,7 +26,7 @@ $nombre        = mysqli_real_escape_string($db, $_POST['user_name']);
 $email         = mysqli_real_escape_string($db, $_POST['email']);
 $password      = mysqli_real_escape_string($db, $_POST['password']);
 $tipo_id       = mysqli_real_escape_string($db, $_POST['tipo_id']);
-$passwordmd5  = md5($password);
+$passwordmd5   = password_hash($password, PASSWORD_BCRYPT); 
 
 
 
@@ -53,7 +53,10 @@ if (!$tipo_id) {
 
 if (!$photo) {
     $errores[] = "El campo FOTO es oblighatorio, debes ingresarlo";
+
+
 }
+
 
 //verificamos que la variable errores llegue vacio de ser asi procedemos
 
@@ -97,10 +100,12 @@ if (!$photo) {
 
         //CONDICIONAMOS SI SE REALIZO LA INSERCION
 
-        if ($resultado_insert) {
+        if ($resultado_insert > 0) {
 
             //direccionando a otra pagina 
             header('location: showUsers.php?registro=1');
+        }else {
+            header('location: showUsers.php?error=4');
         }
     } //fin de la condicion errores vacios
 

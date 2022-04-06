@@ -6,7 +6,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Desarrollo > </b><a class="text-danger" href="#">MAYTech</a>     
     </div>
-    <strong>Panel Administrativo - Sitio Web <a href="https://adminlte.io">INMOBILIARIA</a></strong>
+    <strong>Panel Administrativo - Sitio Web <a href="https://adminlte.io"><?php echo $resultado_datos['name_data'];?></a></strong>
   </footer>
 
   <!-- Control Sidebar -->
@@ -82,7 +82,20 @@
 })
 </script>
 
+<?php elseif ( intval($error) === 4): ?>
+  
+  <script>
+   Swal.fire({
+    title: 'Error al Ejecutar',
+    text: "Proceso no admitido",
+    icon: 'warning',
+   
+  })
+  </script>
+
 <?php endif;?>
+
+
 
 <!-- Paginacion de Datatable-->
 <script>

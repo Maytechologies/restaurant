@@ -7,14 +7,20 @@
     color: rgb(63, 62, 62) !important;
 }
 
+.label{
+    margin-top: -10 !important;
+}
+
 .imgsmall{
 
     height: 40px !important;
     width: 40px !important;
     border-radius: 50px !important;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4) !important;
 }
 
 h3.titulo.card-title{
     color: rgb(48, 47, 47) !important;
 }
+
 

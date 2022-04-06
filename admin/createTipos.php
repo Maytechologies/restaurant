@@ -194,7 +194,7 @@ include './views/adm_menu.php';
                         <div class="col-sm-12">
                             <div class="mb-3">
                                 <label for="titulo" class="form-label">Titulo :</label>
-                                <input type="text" class="form-control" id="tipo_nombre" name="tipo_nombre" placeholder="Ingresar Nombre" value="<?php echo $tipo_nombre; ?>">
+                                <input type="text" class="form-control" id="tipo_nombre" name="tipo_nombre" placeholder="Ingresar Nombre" value="<?php echo $tipo_nombre; ?>" required="">
                                 <p></p>
                             </div>
                         </div>

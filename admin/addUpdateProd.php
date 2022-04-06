@@ -23,10 +23,10 @@ $db = conectarDB();
 
 
 
-   $id = $_POST['id'];
-  $consulproducto = "SELECT *FROM productos WHERE id = ${id}";
-  $queryproducto = mysqli_query($db, $consulproducto);
-  $productos = mysqli_fetch_assoc($queryproducto); 
+ $id = $_POST['id'];
+   $consulproducto = "SELECT *FROM productos WHERE id = ${id}";
+      $queryproducto = mysqli_query($db, $consulproducto);
+         $productos = mysqli_fetch_assoc($queryproducto); 
 
   
 

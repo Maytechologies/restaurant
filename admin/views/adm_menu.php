@@ -4,9 +4,7 @@
       $datos = "SELECT *FROM datos";
 
       //Visualizamos la consulta SQL
-
       $query_datos = mysqli_query($db, $datos);
-
       $resultado_datos = mysqli_fetch_assoc($query_datos);
 
         /*  echo "<pre>";
@@ -30,10 +28,10 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="./dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img class="imgsmall" src="./uploads/users/<?php echo $_SESSION['photo']; ?>" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Marco Antonio</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['user']; ?></a>
         </div>
       </div>
 
@@ -44,7 +42,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/index.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
 
               <p>
