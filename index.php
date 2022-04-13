@@ -1,3 +1,7 @@
+<!-------------------------------------------------------
+-------------------PAGINA WEB PRINCIPAL------------------
+--------------------------------------------------------->
+
 <?php
 include 'includeweb/header.php';
 ?>
@@ -23,20 +27,20 @@ include 'includeweb/header.php';
 
    <div class="box" data-aos="fade-up" data-aos-delay="150">
       <i class="fas fa-hamburger"></i>
-      <h3>Buena Calidad</h3>
+        <h3>Buena Calidad</h3>
       <p>Proceso de selección de productos en diferentes lugares para lograr un sorprendente producto</p>
    </div>
 
    <div class="box" data-aos="fade-up" data-aos-delay="300">
       <i class="fas fa-shipping-fast"></i>
-      <h3>Delivery</h3>
+        <h3>Delivery</h3>
       <p>+56 942589675</p>
    </div>
 
    <div class="box" data-aos="fade-up" data-aos-delay="450">
       <i class="fas fa-headset"></i>
-      <h3>Contacto</h3>
-      <p><a style="color: rgb(15, 233, 7);" href="https://api.whatsapp.com/send?phone=56942589675&text=hola..%20los%20contacto%20por%20medio%20de%20su%20web">WhatsApp</a></p>
+         <h3>Contacto</h3>
+        <p><a style="color: rgb(15, 233, 7);" href="https://api.whatsapp.com/send?phone=56942589675&text=hola..%20los%20contacto%20por%20medio%20de%20su%20web">WhatsApp</a></p>
       <p><a style="color:seashell"  href="#contact">LandinPages</a></p>
    </div>
 
@@ -53,7 +57,7 @@ include 'includeweb/header.php';
       <h3>Menú</h3>
    </div>
 
-   <div class="box-container">
+   <div class="box-container"><!-- Container principal del menu -->
 
       <div class="box" data-aos="fade-up" data-aos-delay="150">
 
@@ -61,8 +65,7 @@ include 'includeweb/header.php';
          <div class="content">
             
             <h3>Hamburguesa MIXTA</h3>
-            <div class="price">$ 4.600</div>
-           
+             <div class="price">$ 4.600</div>
          </div>
         
         

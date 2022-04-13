@@ -1,5 +1,11 @@
 
 <?php 
+
+//-------------------------------------------------------------//
+//-----------------  Modal UpdateUser.php  --------------------//
+//-------------------------------------------------------------//
+
+
 //SENTENCIA SQL CONSULTAR REGISTROS TIPOS DE PRODUCTO:
 
 $tipo = "SELECT * FROM tipo_producto";
@@ -13,8 +19,9 @@ echo "</pre>";  */
 $modals = "SELECT *FROM modal_producto";
 $resul_modal = mysqli_query($db, $modals);
 ?>
-
-<!-- Modal -->
+<!------------------->
+<!----- Modal ------->
+<!------------------->
 <div class="modal fade" id="updateproducto<?php echo $productos['id']; ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -35,8 +42,8 @@ $resul_modal = mysqli_query($db, $modals);
                                       <div class="form-group">
                                           <label for="nombre">Nombre :</label>
                                               <input type="hidden" class="form-control" name="id" value="<?= $productos ['id'];?>"> 
-                                              <input type="hidden" class="form-control" name="estado" value="<?= $productos ['estado'];?>"> 
-                                              <input type="hidden" class="form-control" name="creado" value="<?= $productos ['creado'];?>"> 
+                                                  <input type="hidden" class="form-control" name="estado_id" value="<?= $productos ['estado_id'];?>"> 
+                                                  <input type="hidden" class="form-control" name="creado" value="<?= $productos ['creado'];?>"> 
                                               <input type="text" class="form-control" name="nombre" placeholder="Nombre del Producto" value="<?= $productos ['nombre'];?>">                                
                                       </div> 
                                   </div>
@@ -55,14 +62,11 @@ $resul_modal = mysqli_query($db, $modals);
                            <div class="form-group">
                            <label for="categoria" class="form-label">Categoria :</label>
 
-                                          <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $tipo; ?>">
-                                              <option value=" ">Selecionar una Opción</option>
-                                              <?php while ($tipopro = mysqli_fetch_assoc($resul_tipo)):?> 
+                                          <select name="tipo_id" id="tipo_id" class="form-control" value="<?php echo $productos['tipo_nombre'];?>">
+                                              <option value="<?php echo $productos['tipo_id'];?> "><?php echo $productos['tipo_nombre'];?></option>
+                                                   <?php while ($tipopro = mysqli_fetch_assoc($resul_tipo)):?> 
                                                  <option <?php echo $tipo === $tipopro['id'] ? 'selected': '' ;?> value="<?php echo $tipopro['id'];?>"><?php  echo $tipopro['tipo_nombre'];?></option>
                                               <?php  endwhile;?>
-
-
-                                            
                                           </select>
 
                             </div>
@@ -98,10 +102,9 @@ $resul_modal = mysqli_query($db, $modals);
 
                          <div class="form-group">
                               <label for="categoria" class="form-label">Imagen Modal:</label>
-                                        <select name="modal_img_id" id="modal_img_id" class="form-control" value="<?php echo $modals; ?>">
-
-
-                                            <option value=" ">Selecionar un Modal</option>
+                                        <select name="modal_img_id" id="modal_img_id" class="form-control" value="<?php echo $productos['nombre_modal'];?>">
+                                      
+                                            <option value="<?php echo $productos['id_modal'];?>"><?php echo $productos['nombre_modal'];?></option>
                                             <?php while ($modal = mysqli_fetch_assoc($resul_modal)):?> 
                                                <option <?php echo $modals === $modal['id_modal'] ? 'selected': '' ;?> value="<?php echo $modal['id_modal'];?>"><?php  echo $modal['nombre_modal'];?></option>
                                             <?php  endwhile;?>

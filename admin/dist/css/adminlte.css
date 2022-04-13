@@ -52430,4 +52430,12 @@ a.text-muted:hover {
   background-color: var(--gray) !important;
 }
 
+.botonModal{
+
+  font-size: 20px !important;
+  color: #fff;
+  background: red;
+
+}
+
 

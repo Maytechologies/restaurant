@@ -3,9 +3,19 @@
 
  $db = conectarDB();
 
+
+     $datos = "SELECT *FROM datos";
+      $query_datos = mysqli_query($db, $datos);
+        $SQL_datos = mysqli_fetch_assoc($query_datos);
+        /* var_dump($SQL_datos); */
+
+      
+
  //chequear datos enviados por el POST
 
  $errores = [];
+
+
 
  if ($_SERVER['REQUEST_METHOD']==='POST') {
      
@@ -93,7 +103,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Empresa | login</title>
+  <title>login | <?php  echo $SQL_datos['name_data'];?></title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -113,7 +123,8 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Empresa</b>Login</a>
+      <img src="/admin/uploads/datos/<?php  echo $SQL_datos['logo_data'];?>" style="width: 150px;" alt="">
+      <a href="../../index2.html" class="h4 mx-1"><b>Empresa</b><?php  echo $SQL_datos['name_data'];?></a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Ingresa Datos para iniciar Sesión</p>

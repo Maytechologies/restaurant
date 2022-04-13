@@ -7,9 +7,6 @@
       $query_datos = mysqli_query($db, $datos);
       $resultado_datos = mysqli_fetch_assoc($query_datos);
 
-        /*  echo "<pre>";
-        var_dump($resultado_datos);
-         echo "</pre>"; */
 
   ?>
  
@@ -55,7 +52,7 @@
           <li class="nav-item">
             <a href="showTipo.php" class="nav-link">
               <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Tipo de Producto</p>
+              <p class="text">Categorias</p>
             </a>
           </li>
           <li class="nav-item">

@@ -1,10 +1,13 @@
 
-<?php
 
+<!-- -------------------------------------------------------
+-------------------DASHBOARD ADMINISTRATOR------------------
+--------------------------------------------------------- -->
+<?php
 require './functions/function.php';
-echo "<pre>";
+/* echo "<pre>";
 var_dump($_SERVER);
-echo "</pre>";
+echo "</pre>"; */
  
 
 $auth = onlineUser();
@@ -14,7 +17,7 @@ $inicio = sesion();
 //verificamos que exista usuario autenticado de no ser asi redirigir al sitio web
 
 if (!$auth) {
-  header('Location: ../index.php');
+  header('Location: ../login.php');
 }
  
 
@@ -23,6 +26,33 @@ if (!$auth) {
   require 'config/dbconfig.php';
 
   $db = conectarDB();
+
+  //SENETENCIA PARA REGISTRAR VISITAS EFECTUADAS A LA PAGINA DAHSBOARD
+  date_default_timezone_set("America/Santiago");
+  $ip = $_SERVER['REMOTE_ADDR'];
+  $sqlconsultar =$db->query("SELECT *FROM visitas WHERE ip = '$ip' ORDER BY id DESC");
+  $contarConsultar = $sqlconsultar->num_rows;
+
+  if ($contarConsultar === 0) {
+    $SqlInsertar = $db->query("INSERT INTO visitas (ip, fecha) VALUES ('$ip', now())");
+      }else {
+        $row = $sqlconsultar->fetch_array();
+        $fechaRegistro = $row['fecha'];
+        $fechaActual = date("Y-m-d H:i:s");
+        $nuevaFecha = strtotime($fechaRegistro."+ 10 minutes");
+        $nuevaFecha = date("Y-m-d H:i:s", $nuevaFecha);
+
+          if ($fechaActual >= $nuevaFecha) {
+            $SqlInsertar = $db->query("INSERT INTO visitas (ip, fecha) VALUES ('$ip', now())");
+          }
+     }
+
+     $Consulvisitas = $db->query("SELECT *FROM visitas");
+     $num_Visitas = $Consulvisitas->num_rows;
+     
+
+/* ===================================================================================== */
+  
 
   //sentencia SQL consultar registros de usuarios
   $usuariosDB = "SELECT COUNT(*) FROM usuarios";
@@ -49,6 +79,8 @@ if (!$auth) {
   $queryProducto = mysqli_query($db, $ProductosDB);
   $resulProducto = mysqli_fetch_row($queryProducto);
   $Products = $resulProducto['0'];
+
+ /*  =========================================================================================== */
   
 
  include 'views/adm_header.php';
@@ -146,14 +178,14 @@ if (!$auth) {
                                             <p class="fw-bold">3</p>
                                         </div>
                                 </div>
-                              </div>
-                              <!-- /.info-box -->
-                            </div>
+                              </div> <!-- /.info-box -->
+                             
+                            </div><!-- /.col -->
                           </div> <!-- /.row -->
                         
 
                           <!-- Small Box (Stat card) -->
-                          <h5 class="mb-2 mt-4">Small Box</h5>
+                          <h6 class="mb-1 mt-2">Small Box</h6>
                           <div class="row">
                             <div class="col-lg-3 col-6">
                               <!-- small card -->
@@ -174,7 +206,7 @@ if (!$auth) {
                             <!-- ./col -->
                             <div class="col-lg-3 col-6">
                               <!-- small card -->
-                              <div class="small-box bg-success">
+                              <div class="small-box bg-danger">
                                 <div class="inner">
                                   <h3>53<sup style="font-size: 20px">%</sup></h3>
 
@@ -208,11 +240,12 @@ if (!$auth) {
                             <!-- ./col -->
                             <div class="col-lg-3 col-6">
                               <!-- small card -->
-                              <div class="small-box bg-danger">
+                              <div class="small-box bg-success">
                                 <div class="inner">
-                                  <h3>65</h3>
-
-                                  <p>Unique Visitors</p>
+                                  <h3 class="mb-0"><?php echo $num_Visitas;?></h3>
+                                  <span class="info-box-number">Acceso</span>
+                                  <br>
+                                  <span class="info-box-text">al DashBoard</span>
                                 </div>
                                 <div class="icon">
                                   <i class="fas fa-chart-pie"></i>
@@ -226,7 +259,7 @@ if (!$auth) {
                           </div>
                           <!-- /.row -->
 
-                          <h3 class="mt-4 mb-4">Tarjetas para Usuarios</h3>
+                          <h6 class="mt-2 mb-1">Usuarios Del Sistema</h6>
                           <!-- =========================================================== -->
                          
                           <div class="row">
