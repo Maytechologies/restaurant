@@ -6,6 +6,8 @@ include 'includeweb/header.php';
 <!---------- Inicio Prmosiones ---------------->
 <!-- --============================-- --------->
 
+
+
 <section class="blogs" id="blogs">
 
         <div class="heading">
@@ -63,9 +65,9 @@ include 'includeweb/header.php';
 
 
 
-<!-- ------============================-- --------------->
-<!---------- ----Inicio Tabla productos ----------------->
-<!-- ------============================-- --------------->
+<!---------============================--------------------->
+<!---------------Inicio Carta de productos ----------------->
+<!---------============================--------------------->
 
 
 
@@ -98,7 +100,7 @@ include 'includeweb/header.php';
                              </thead>
                                <tbody>
 
-                               <?php while ($productos = mysqli_fetch_assoc($resulAllProductos)): ?>
+                               <?php while ($productos = mysqli_fetch_assoc($tables3Query)): ?>
 
                     
                                         <tr class="table-group">

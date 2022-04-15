@@ -92,7 +92,7 @@ include 'views/adm_menu.php';
                 <div class="card">
                     <div class="card-header d-flex align-items-center">
                         <div class="col mr-auto">
-                            <h3 class="titulo card-title">Tipos de Productos</h3>
+                            <h3 class="titulo card-title font-weight-bold">LISTADO DE CATEGORIAS</h3>
                         </div>
                         <div class="row text-nowrap align-items-center">
                             <div class="col">Nuevo Registro</div>

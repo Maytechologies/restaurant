@@ -22,20 +22,20 @@
           </div>
         </div>
 
-        <div class="col col-6 border-left">
-            <div class="from-group">
-               <h6 class="font-weight-bold titulo">Nombre :</h6>
-                   <input type="hidden"  name="id" id="id" value="<?php echo $productos['id'];?>">
-                       <label class="font-weight-light label" for="nombre"><?= $productos['nombre'];?></label>
+              <div class="col col-6 border-left">
+                  <div class="from-group">
+                    <h6 class="font-weight-bold titulo">Nombre :</h6>
+                        <input type="hidden"  name="id" id="id" value="<?php echo $productos['id'];?>">
+                            <label class="font-weight-light label" for="nombre"><?= $productos['nombre'];?></label>
 
-                      <h6 class="font-weight-bold titulo">Precio :</h6>
-                      <label class="font-weight-light" for="nombre"><?= $productos['precio'];?></label>
+                            <h6 class="font-weight-bold titulo">Precio :</h6>
+                            <label class="font-weight-light" for="nombre"><?= $productos['precio'];?></label>
 
-                   <h6 class="font-weight-bold titulo">Categoria :</h6>
-              <label class="font-weight-light" for="nombre"><?= $productos['tipo_nombre'];?></label>
-           </div>
-         </div>
-       </div>
+                        <h6 class="font-weight-bold titulo">Categoria :</h6>
+                    <label class="font-weight-light" for="nombre"><?= $productos['tipo_nombre'];?></label>
+                </div>
+              </div>
+            </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

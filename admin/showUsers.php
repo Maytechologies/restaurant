@@ -95,7 +95,7 @@ include 'views/adm_menu.php';
                 <div class="card">
                     <div class="card-header">
                         <div class="col mr-auto">
-                            <h3 class="titulo card-title">Listado de Usuarios</h3>
+                            <h3 class="titulo card-title font-weight-bold">USUARIOS DEL SISTEMA</h3>
                                </div>
                           
                                         <div class="row d-flex justify-content-end"> 

@@ -40,7 +40,7 @@ exit; */
 
 $productos = "SELECT * FROM productos as p
 INNER JOIN modal_producto as m
-ON p.modal_img_id = m.id_modal";
+ON p.modal_img_id = m.id_modal WHERE estado_id = 1";
 $resulAllProductos = mysqli_query($db, $productos);
 /* $ProductosAll = mysqli_fetch_assoc($resulAllProductos); */
 
@@ -64,7 +64,8 @@ $resulAllProductos = mysqli_query($db, $productos);
                         INNER JOIN tipo_producto as t
                         ON p.tipo_id = t.id
                         INNER JOIN estado as st
-                        ON p.estado_id = st.id_status";
+                        ON p.estado_id = st.id_status
+                        WHERE estado_id = 1";
         $tables3Query = mysqli_query($db, $tablesProductos);
          /*  $tables3 = mysqli_fetch_assoc($tablesQuery);  */
 
@@ -135,15 +136,17 @@ include 'views/adm_menu.php';
                 <div class="card">
                     <div class="card-header">
                         <div class="col mr-auto">
-                            <h3 class="titulo card-title">Listado de Productos</h3>
+                            <h3 class="titulo card-title font-weight-bold">LISTADO DE PRODUCTOS</h3>
                         </div>
                           
                         <div class="row d-flex justify-content-end">
                         <div class="row text-nowrap align-items-center">
+                           
                             <div class="col">Nuevo Modal :</div>
                             <div class="col"><button class="btn btn-info mr-5 ml-0" data-toggle="modal" data-target="#nuevomodal"><i class="fas fa-image"></i></button>
                             <?php  include 'modals/imgModal.php' ?>
-                        </div>
+                            </div>
+                       
                         </div>
 
                         <div class="row text-nowrap align-items-center">
@@ -210,6 +213,14 @@ include 'views/adm_menu.php';
                                                     <div class="col mx-0">
                                                         <!-- EDITAR REGISTRO -->
                                                         <button class="btn btn-warning" data-toggle="modal" data-target="#updateproducto<?php echo $productos['id']; ?>"><i class="fas fa-edit"></i></button>                                
+                                                    </div>
+
+                                                    <div class="col mx-0">
+                                                        <!-- EDITAR REGISTRO -->
+                                                        <form action="updateEstadoProd.php" method="POST">
+                                                            <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
+                                                        <button class="btn btn-secondary"  type="submit"><i class="fas fa-arrow-down"></i></button> 
+                                                        </form>                               
                                                     </div>
 
                                                     <div class="col mx-0">

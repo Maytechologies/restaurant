@@ -1,6 +1,6 @@
 
 <!-- -------------------------------------------------------------
-------SENTENCIA SQL CONSULTAR REGISTROS TIPOS DE PRODUCTO:--------
+-----------------------MODAL FICHA DE PRODUCTOS-------------------
 ----------------------------------------------------------------->
 
 <div class="modal fade" id="modalficha<?php echo $productos['id']; ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -30,7 +30,7 @@
                                        <div class="row d-flex align-items-center">
                                           <div class="col-4 m-0">
                                                 <label for="precio">Precio :</label>
-                                                    <input type="number" class="form-control " id="precio" name="precio"  value="$ <?= number_format($productos['precio'], 2, ',', '.'); ?>" disabled>
+                                                    <input type="number" class="form-control " id="precio" name="precio"  value="<?php echo $productos['precio']; ?>" disabled>
                                           </div>
                                                                         
                                     

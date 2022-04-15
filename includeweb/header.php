@@ -7,12 +7,12 @@
 
 include './admin/config/dbconfig.php';
 
-$bd = conectarDB();
+$db = conectarDB();
 
 //SENETENCIA PARA REGISTRAR VISITAS EFECTUADAS A LA PAGINA DAHSBOARD
 date_default_timezone_set("America/Santiago");
 $ip = $_SERVER['REMOTE_ADDR'];
-$sqlconsultar =$bd->query("SELECT *FROM visitas WHERE ip = '$ip' ORDER BY id DESC");
+$sqlconsultar =$db->query("SELECT *FROM visitas WHERE ip = '$ip' ORDER BY id DESC");
 $contarConsultar = $sqlconsultar->num_rows;
 
 if ($contarConsultar === 0) {
@@ -25,11 +25,11 @@ if ($contarConsultar === 0) {
       $nuevaFecha = date("Y-m-d H:i:s", $nuevaFecha);
 
         if ($fechaActual >= $nuevaFecha) {
-          $SqlInsertar = $bd->query("INSERT INTO visitas (ip, fecha) VALUES ('$ip', now())");
+          $SqlInsertar = $db->query("INSERT INTO visitas (ip, fecha) VALUES ('$ip', now())");
         }
    }
 
-   $Consulvisitas = $bd->query("SELECT *FROM visitas");
+   $Consulvisitas = $db->query("SELECT *FROM visitas");
    $num_Visitas = $Consulvisitas->num_rows;
    
 
@@ -37,10 +37,16 @@ if ($contarConsultar === 0) {
 
 //SENETENCIA SQL LISTADO DE PRODUCTOS / MODAL
 
-$ConsultaProductos = "SELECT p.id, p.nombre, p.small_img, p.precio, p.ingredientes, p.modal_img_id, p.tipo_id, m.nombre_modal, m.img_modal FROM productos as p
-INNER JOIN modal_producto as m
-ON p.modal_img_id = m.id_modal";
-$resulAllProductos = mysqli_query($bd, $ConsultaProductos);
+$tablesProductos = "SELECT p.id, p.nombre, p.small_img, p.precio, p.ingredientes, p.tipo_id, p.creado, t.tipo_nombre, p.modal_img_id as id_modal, m.nombre_modal, m.img_modal, st.id_status as estado_id, st.name_status as estado 
+                        FROM productos as p
+                        INNER JOIN modal_producto as m
+                        ON p.modal_img_id = m.id_modal
+                        INNER JOIN tipo_producto as t
+                        ON p.tipo_id = t.id
+                        INNER JOIN estado as st
+                        ON p.estado_id = st.id_status
+                        WHERE estado_id = 1";
+        $tables3Query = mysqli_query($db, $tablesProductos);
 
 
 

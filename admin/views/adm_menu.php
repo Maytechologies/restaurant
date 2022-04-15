@@ -48,39 +48,84 @@
             </a>
           </li>
 
-          <li class="nav-header">SESIONES</li>
+        <li class="nav-header">SESIONES</li>
           <li class="nav-item">
             <a href="showTipo.php" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Categorias</p>
-            </a>
+              <i class="nav-icon fas fa-box text-danger"></i>
+                <p class="text">Admin Categorias</p>
+                 </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="showTipo.php" class="nav-link">
+                        <i class="nav-icon far fa-circle text-blue"></i>
+                          <p>Categorias</p>
+                           </a>
+                            </li>
+                            <li class="nav-item" >
+                          <a href="showProductosDow.php" class="nav-link">
+                       <i class="nav-icon far fa-circle text-danger"></i>
+                     <p class="text">Categorias Inactivas</p>
+                  </a>
+               </li>
+            </ul>
+           <!-- ============================================= -->
           </li>
           <li class="nav-item">
             <a href="modalProducto.php" class="nav-link">
-              <i class="nav-icon far fa-circle text-success"></i>
+               <i class="nav-icon fab fa-wpforms"></i>
               <p class="text">Modal Producto</p>
             </a>
           </li>
+           <!-- ============================================= -->
           <li class="nav-item">
-            <a href="showProductos.php" class="nav-link">
-              <i class="nav-icon far fa-circle text-warning"></i>
-              <p>Productos</p>
-            </a>
+            <a href="show.php" class="nav-link">
+              <i class="nav-icon fas fa-box-open text-blue"></i>
+                <p>Admin-Productos</p>
+                  </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="showProductos.php" class="nav-link">
+                         <i class="nav-icon far fa-circle text-warning"></i>
+                          <p>Productos</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                          <a href="showProductosDow.php" class="nav-link">
+                        <i class="nav-icon far fa-circle text-danger"></i>
+                     <p>Productos Inactivos</p>
+                  </a>
+               </li>
+            </ul>
           </li>
+          <!-- ============================================= -->
           <li class="nav-item">
             <a href="showUsers.php" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>Usuarios</p>
-            </a>
-          </li>
-          <li class="nav-item">
+              <i class="nav-icon fas fa-users text-warning"></i>
+                <p>Admin-Usuarios</p>
+                  </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="showUsers.php" class="nav-link">
+                          <i class="nav-icon far fa-circle text-info"></i>
+                             <p>Usuarios</p>
+                               </a>
+                                </li>
+                                 <li class="nav-item">
+                               <a href="showProductosDow.php" class="nav-link">
+                             <i class="nav-icon far fa-circle text-danger"></i>
+                           <p>Usuarios Inactivos</p>
+                         </a>
+                      </li>
+                    </ul>
+                 </li>
+              <li class="nav-item">
             <a href="regDatos.php" class="nav-link">
-              <i class="nav-icon far fa-circle text-white"></i>
-              <p>Datos</p>
-            </a>
-          </li>
-        </ul>
-      </nav>
+          <i class="nav-icon far fa-circle text-white"></i>
+        <p>Datos</p>
+      </a>
+    </li>
+  </ul>
+</nav>
       <!-- Final sidebar-menu -->
     </div>
     <!-- Final sidebar -->
