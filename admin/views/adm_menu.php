@@ -62,7 +62,7 @@
                            </a>
                             </li>
                             <li class="nav-item" >
-                          <a href="showProductosDow.php" class="nav-link">
+                          <a href="showTipoDow.php" class="nav-link">
                        <i class="nav-icon far fa-circle text-danger"></i>
                      <p class="text">Categorias Inactivas</p>
                   </a>
@@ -118,12 +118,13 @@
                       </li>
                     </ul>
                  </li>
+                 <!-- ============================================= -->
               <li class="nav-item">
             <a href="regDatos.php" class="nav-link">
           <i class="nav-icon far fa-circle text-white"></i>
         <p>Datos</p>
       </a>
-    </li>
+    </li>        
   </ul>
 </nav>
       <!-- Final sidebar-menu -->

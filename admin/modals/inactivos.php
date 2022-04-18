@@ -11,7 +11,54 @@
         <h5 class="modal-title" id="exampleModalLabel">Productos inactivos</h5>
       </div>
       <div class="modal-body">
+      
+      <table class="table table-striped|sm|bordered|hover|inverse table-inverse table-responsive">
+        <thead class="thead-inverse|thead-default">
+          <tr>
+            <th>PRIMER TITULO</th>
+            <th>SEGUNDO TITULO</th>
+            <th>TERCERO TITULO</th>
+            <th>ACCIÓN</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>datos de la tabla</td>
+              <td>datos de la tabla</td>
+              <td>datos de la tabla</td>
+              <td><button class="buttondl btn btn-danger" data-toggle="modal" data-target=""><i class="fas fa-trash"></i></button></td>
+            </tr>
+            <tr>
+              <td>sub datos de la tabla</td>
+              <td>sub datos de la tabla</td>
+              <td>sub datos de la tabla</td>
+              <td><button class="buttondl btn btn-danger" data-toggle="modal" data-target=""><i class="fas fa-trash"></i></button></td>
+            </tr>
 
+            <tr>
+              <td>sub datos de la tabla</td>
+              <td>sub datos de la tabla</td>
+              <td>sub datos de la tabla</td>
+              <td><button class="buttondl btn btn-danger" data-toggle="modal" data-target=""><i class="fas fa-trash"></i></button></td>
+            </tr>
+
+            <tr>
+              <td>sub datos de la tabla</td>
+              <td>sub datos de la tabla</td>
+              <td>sub datos de la tabla</td>
+              <td><button class="buttondl btn btn-danger" data-toggle="modal" data-target=""><i class="fas fa-trash"></i></button></td>
+            </tr>
+
+            <tr>
+              <td>sub datos de la tabla</td>
+              <td>sub datos de la tabla</td>
+              <td>sub datos de la tabla</td>
+              <td><button class="buttondl btn btn-danger" data-toggle="modal" data-target=""><i class="fas fa-trash"></i></button></td>
+            </tr>
+
+          </tbody>
+      </table>
+      
 
       <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

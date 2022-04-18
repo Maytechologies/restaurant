@@ -15806,23 +15806,23 @@
 			"iDeferLoading": null,
 		
 		
-			/**
-			 * Number of rows to display on a single page when using pagination. If
-			 * feature enabled (`lengthChange`) then the end user will be able to override
-			 * this to a custom setting using a pop-up menu.
-			 *  @type int
-			 *  @default 10
-			 *
-			 *  @dtopt Options
-			 *  @name DataTable.defaults.pageLength
-			 *
-			 *  @example
-			 *    $(document).ready( function() {
-			 *      $('#example').dataTable( {
-			 *        "pageLength": 50
-			 *      } );
-			 *    } )
-			 */
+			
+			  /* Number of rows to display on a single page when using pagination. If
+			  feature enabled (`lengthChange`) then the end user will be able to override
+			  this to a custom setting using a pop-up menu. */
+			 /*   @type int
+			   @default 10 */
+			 
+			   /* @dtopt Options
+			   @name DataTable.defaults.pageLength */
+			 
+			   @example
+			     $(document).ready( function() {
+			      $('#example').dataTable( {
+			        "pageLength": 50
+			      } );
+			    } )
+			 
 			"iDisplayLength": 10,
 		
 		

@@ -1,5 +1,9 @@
 <?php
 
+//-------------------------------------------------------------//
+//----------------- LISTADO DE CATEGORIAS  --------------------//
+//-------------------------------------------------------------//
+
 require './functions/function.php';
 
 $auth = onlineUser();
@@ -19,7 +23,7 @@ $db = conectarDB();
 
 //sentencia SQL consultar registros de propiedades
 
-$tipos = "SELECT *FROM tipo_producto";
+$tipos = "SELECT *FROM tipo_producto WHERE estado = 1";
 
 //Visualizamos la consulta SQL
 
@@ -76,32 +80,29 @@ include 'views/adm_menu.php';
 
 
 <!-- Contenido principal -->
-<div class="content-wrapper">
+
+<div class="section">
+  <div class="content-wrapper w-70">
 
     <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-
-
-
-            </div>
-        </div>
+    
         <div class="row">
-            <div class="col-12 mt-2">
-                <div class="card">
-                    <div class="card-header d-flex align-items-center">
-                        <div class="col mr-auto">
-                            <h3 class="titulo card-title font-weight-bold">LISTADO DE CATEGORIAS</h3>
-                        </div>
-                        <div class="row text-nowrap align-items-center">
-                            <div class="col">Nuevo Registro</div>
-                            <div class="col"><a href="createTipos.php"><button class="btn btn-success"><i class="fas fa-plus-circle"></i></button></a></div>
-                        </div>
+            <div class="col-md-12 mt-2">
+                 <div class="card">
+
+                        <div class="card-header">
+                                <div class="col mr-auto">
+                                    <h3 class="titulo card-title font-weight-bold">LISTADO DE CATEGORIAS</h3>
+                                       </div>
+                                        <div class="row d-flex justify-content-end"> 
+                                        <div class="row text-nowrap align-items-center">
+                                        <div class="col">Nuevo Registro :</div>
+                                    <div class="col"><button class="btn btn-success" data-toggle="modal" data-target="#newTipoPro"><i class="fas fa-plus-circle"></i></button></div>
+                          
+                            </div>          
+                        </div>       
                     </div>
 
-
-                    <div class="card">
 
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -129,56 +130,64 @@ include 'views/adm_menu.php';
                                             <td>
                                                 <div class="row text-center">
 
-                                                    <div class="col">
-                                                        <!-- VER DETALLES DEL REGISTRO -->
-                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#viewItem<?php echo $tipos['id']; ?>"><i class="fab fa-wpforms"></i></button>
-                                                    </div>
-
                                                     <div class="col mx-0">
                                                         <!-- EDITAR REGISTRO -->
-                                                        <a href="updateTipo.php?id=<?php echo $tipos['id']; ?>"><button class="btn btn-warning"><i class="fas fa-edit"></i></button></a>
-                                                    </div>
+                                                        <div class="col mx-0">
+                                                                <button class="btn btn-warning" data-toggle="modal" data-target="#updateTipo<?php echo $tipos['id']; ?>"><i class="fas fa-edit"></i></button>                           
+                                                        </div>
+                                                           </div>
 
-                                                    <div class="col mx-0">
-                                                        <!-- ELIMINAR REGISTRO -->
-                                                        <form method="POST">
-                                                            <input type="hidden" name="id" value="<?php echo $tipos['id']; ?>">
-                                                            <button type="submit" class="buttondl btn btn-danger"><i class="fas fa-trash"></i></button>
-                                                        </form>
+                                                                <div class="col mx-0">
+                                                                    <!-- CAMBIAR ESTADO -->
+                                                                    <form action="updateEstadoTipo.php" method="POST">
+                                                                        <input type="hidden" name="id" value="<?php echo $tipos['id']; ?>">
+                                                                    <button class="btn btn-secondary"  type="submit"><i class="fas fa-arrow-down"></i></button> 
+                                                                    </form>                               
+                                                                </div>
+
+                                                           <div class="col mx-0">
+                                                         <!-- ELIMINAR REGISTRO -->
+                                                        <button class="buttondl btn btn-danger" data-toggle="modal" data-target="#eliminar<?php echo $tipos['id']; ?>"><i class="fas fa-trash"></i></button>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
+                                    </div>
 
-                                       <?php  include 'modals/viewTipoPro.php' ?>
+                                <?php  include 'modals/updateTipo.php' ?>
+                            <?php  include 'modals/newTipoPro.php' ?>
+                        <?php  include 'modals/deleteTipo.php' ?>
 
-                                   </div>
+                                   
 
-
+                         </div>   <!-- /.card-body -->  
 
                     <?php endwhile; ?>
-                    </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Nombre</th>
-                                    <th>Imagen</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </tfoot>
-                    </table>
-                    </div>   <!-- /.card-body -->
-                  
-                </div>
-                <!-- /.card -->
+                </tbody>
+            <tfoot>
+        <tr>
+            
+        <th>Item</th>
+            
+             <th>Nombre</th>
+            
+            <th>Imagen</th>
+            
+            <th>Acciones</th>
+        
+        </tr>
+    
+    </tfoot>
+</table>
+           
             </div>
             <!-- /.col -->
         </div>
         <!-- /.row -->
+ 
 </div>
 <!-- /.container-fluid -->
-</section>
-<!-- /.content -->
+
 
 <!-- /.content -->
 </div>

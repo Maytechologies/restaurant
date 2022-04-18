@@ -45,7 +45,7 @@ AOS.init({
 <script src="../admin/plugins/sweetalert2/sweetalert2.all.min.js" ></script>
 
 <!-- DataTables  & Plugins -->
-<script src="../plugings/datatables/datatables.min.js"></script>
+<!-- <script src="../plugings/datatables/datatables.min.js"></script> -->
 <script src="../plugings/datatables/Bootstrap-4-4.6.0/js/bootstrap.min.js"></script>
 <script src="../plugings/datatables/DataTables-1.11.5/js/dataTables.bootstrap4.min.js"></script>
 <script src="../plugings/datatables/DataTables-1.11.5/js/jquery.dataTables.min.js"></script>
@@ -60,6 +60,9 @@ AOS.init({
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+      "lengthMenu": [20, 40, 60, 80, 100], "pageLength": 20,
+      
+      
        
       "language": {
 
@@ -105,7 +108,8 @@ AOS.init({
 
         "sSortDescending": ": Activar para ordenar la columna de manera descendente"
 
-        }
+        },
+        
         }
 
 
@@ -123,13 +127,15 @@ AOS.init({
       "info": true,
       "autoWidth": false,
       "responsive": true,
+      "pageLength": true
       
 
 
 });
-   
+
 
   });
+
  </script>
     
 </body>

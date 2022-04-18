@@ -125,12 +125,7 @@ include 'views/adm_menu.php';
 <div class="content-wrapper">
 
     <!-- Main content -->
-<section class="content">
-        <div class="container-fluid">
-            <div class="row">
-
-            </div>
-        </div>
+<section class="content"> 
     <div class="row">
             <div class="col-12 mt-2">
                 <div class="card">
@@ -216,7 +211,7 @@ include 'views/adm_menu.php';
                                                     </div>
 
                                                     <div class="col mx-0">
-                                                        <!-- EDITAR REGISTRO -->
+                                                        <!-- CAMBIAR ESTADO -->
                                                         <form action="updateEstadoProd.php" method="POST">
                                                             <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
                                                         <button class="btn btn-secondary"  type="submit"><i class="fas fa-arrow-down"></i></button> 
@@ -235,6 +230,7 @@ include 'views/adm_menu.php';
                                            <?php include 'modals/deleteProducto.php' ?>
                                         <?php include 'modals/updateProducto.php' ?>
                                     <?php include 'modals/fichaProducto.php' ?>
+                                  
                                 </div>
                             <?php endwhile; ?>
                         </tbody>
@@ -248,8 +244,7 @@ include 'views/adm_menu.php';
                             <th>Acciones</th>
                         </tr>
                     </tfoot>
-    </table>
-                    
+                  </table>
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
@@ -257,10 +252,11 @@ include 'views/adm_menu.php';
             <!-- /.col -->
         </div>
         <!-- /.row -->
+    </section>
+<!-- /.content -->
 </div>
 <!-- /.container-fluid -->
-</section>
-<!-- /.content -->
+
 
 <!-- /.content -->
 </div>
