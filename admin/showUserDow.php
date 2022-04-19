@@ -26,8 +26,8 @@ $db = conectarDB();
 
 //seleccionamos el listado de usuarios de la tabla user
 
-$users = "SELECT u.id, u.user_name, u.email, u.password, u.photo, tp.name_tip_user as perfil, u.tipo_id, u.status
-FROM usuarios as u INNER JOIN tipo_usuario as tp ON u.tipo_id = tp.id WHERE status = 1";
+$users = "SELECT u.id, u.user_name, u.email, u.password, u.photo, tp.name_tip_user as perfil, u.tipo_id
+FROM usuarios as u INNER JOIN tipo_usuario as tp ON u.tipo_id = tp.id WHERE status = 2";
 
 $queryAllUser = mysqli_query($db, $users);
 /* $resulUser = mysqli_fetch_assoc($queryAllUser); */
@@ -41,7 +41,7 @@ $tipou = "SELECT * FROM tipo_usuario";
 $resul_tipou = mysqli_query($db, $tipou); // este query lo aplicamos en la etiqueta select del formulario de registro
 
 /******************************************/
-/*======== ELIMINAR UN REGSITRO===========*/
+/*======== ELIMINAR UN REGSITRO ===========*/
 /******************************************/
 
 //COMPROBANDO LO QUE VIAJA POR EL POST
@@ -95,19 +95,9 @@ include 'views/adm_menu.php';
                 <div class="card">
                     <div class="card-header">
                         <div class="col mr-auto">
-                            <h3 class="titulo card-title font-weight-bold">USUARIOS DEL SISTEMA</h3>
-                               </div>
-                          
-                                        <div class="row d-flex justify-content-end"> 
-                                      <div class="row text-nowrap align-items-center">
-                                     <div class="col">Nuevo Usuario :</div>
-                                    <div class="col"><button class="btn btn-success" data-toggle="modal" data-target="#nuevousuario"><i class="fas fa-plus-circle"></i></button></div>
-                                    <?php  include 'modals/newuser.php' ?>
-                                </div>
-                               
-                        </div>
-                        
-                    </div>
+                            <h3 style="color: red !important;" class="titulo card-title font-weight-bold">USUARIOS INACTIVOS</h3>
+                               </div>                   
+                                 </div>
 
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -137,7 +127,6 @@ include 'views/adm_menu.php';
                                          <input type="hidden" name="password" value="<?php echo $usuarios['password']; ?>">
                                          <input type="hidden" name="perfil" value="<?php echo $usuarios['perfil']; ?>">
                                          <input type="hidden" name="tipo_id" value="<?php echo $usuarios['tipo_id']; ?>">
-                                         <input type="hidden" name="status" value="<?php echo $usuarios['status']; ?>">
                                        
 
                                         <td class="text-uppercase text-center" ><?php echo $usuarios['perfil']; ?></td>
@@ -151,9 +140,9 @@ include 'views/adm_menu.php';
 
                                                               <div class="col mx-0">
                                                                     <!-- CAMBIAR ESTADO -->
-                                                                    <form action="updateEstadoUser.php" method="POST">
+                                                                    <form action="updateUserUp.php" method="POST">
                                                                         <input type="hidden" name="id" value="<?php echo $usuarios['id']; ?>">
-                                                                    <button class="btn btn-secondary"  type="submit"><i class="fas fa-arrow-down"></i></button> 
+                                                                    <button class="btn btn-success"  type="submit"><i class="fas fa-arrow-up"></i></button> 
                                                                     </form>                               
                                                               </div>
 

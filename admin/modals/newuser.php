@@ -1,8 +1,45 @@
- 
-
-<!------------------------------------->
+ <!------------------------------------->
 <!---------- Modal NewUser ------------>
 <!------------------------------------->
+ 
+ <style>
+    
+    .radio{
+        position: relative;
+        justify-content: center;
+        height: 45px;
+        display: inline-flex;
+        overflow: hidden;
+       
+        
+    }
+
+    .radio__input{
+        display: none;
+    }
+
+    .radio__label{
+       padding: 10px 14px;
+        font-size: 10px;
+        font-family: sans-serif;
+        color: #000;
+        background: #ccc;
+        cursor:pointer;
+        transition: background 0.1s;
+        border-radius: 10%;
+    }
+
+    .radio__label:not(last-of-type){
+        border-right: 1px solid #006856;
+    }
+
+    .radio__input:checked + .radio__label{
+        background: #006856;
+        font-size: 12px;
+        color: #fff;
+    }
+
+ </style>
 
 <div class="modal fade" id="nuevousuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -55,6 +92,26 @@
 
 
                           </div>
+
+                        
+                           <div class="radio">
+
+
+                           
+                               <div class="form-group">
+                               <label class="mr-2"> Estado del Usuario :</label>
+                               <input class="radio__input" type="radio"  value="1" name="tipo_id" id="tipo_id1">
+                               <label class="radio__label" for="tipo_id1">Activo</label>
+
+                               <input class="radio__input bg-danger" type="radio"  value="2" name="tipo_id" id="tipo_id2">
+                               <label class="radio__label" for="tipo_id2">Inactivo</label>
+
+                               </div>
+                               
+                           </div>
+                                 
+                                
+                       
 
                          <hr>
 

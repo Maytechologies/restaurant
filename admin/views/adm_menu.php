@@ -10,7 +10,7 @@
 
   ?>
  
- <!------------------------------------------------------------------>
+    <!------------------------------------------------------------------>
     <!------------------ Inicio Menu Sidebar --------------------------->
     <!------------------------------------------------------------------>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -111,7 +111,7 @@
                                </a>
                                 </li>
                                  <li class="nav-item">
-                               <a href="showProductosDow.php" class="nav-link">
+                               <a href="showUserDow.php" class="nav-link">
                              <i class="nav-icon far fa-circle text-danger"></i>
                            <p>Usuarios Inactivos</p>
                          </a>
