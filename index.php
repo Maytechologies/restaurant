@@ -6,6 +6,7 @@
 include 'includeweb/header.php';
 ?>
 
+
 <!-- sessión Inicio   -->
 
 <section class="home" id="home">
@@ -57,76 +58,24 @@ include 'includeweb/header.php';
       <h3>Menú</h3>
    </div>
 
+
+ 
+
    <div class="box-container"><!-- Container principal del menu -->
 
-      <div class="box" data-aos="fade-up" data-aos-delay="150">
+         <?php while ($productos = mysqli_fetch_assoc($tables3Query)): ?>
 
-         <img src="images/product-1.png" alt="">
-         <div class="content">
+            <div class="box" data-aos="fade-up" data-aos-delay="150">
+
+            <img src="/admin/uploads/product/<?php echo $productos['small_img']; ?>">
+               <div class="content">
+                  <h3 class="titulo"><?php echo $productos['nombre']; ?></h3>
+                  <div class="price">$ <?php echo number_format($productos['precio'], 2, ',', '.'); ?></div>
+               </div>
+            </div><!--End Container-->
             
-            <h3>Hamburguesa MIXTA</h3>
-             <div class="price">$ 4.600</div>
-         </div>
-        
-        
-      </div>
-
-
-
-      <div class="box" data-aos="fade-up" data-aos-delay="300">
-         <img src="images/product-2.png" alt="">
-         <div class="content">
+            <?php endwhile; ?>
             
-            <h3>HABURGUESA LA GORDA</h3>
-            <div class="price">$ 5.200</div>
-          
-         </div>
-      </div>
-
-
-
-      <div class="box" data-aos="fade-up" data-aos-delay="450">
-         <img src="images/CLUBHOUSE_ESPECIAL.png" alt="">
-         <div class="content">
-            
-            <h3>CLUB HOUSE ESPECIAL</h3>
-            <div class="price">$ 4.550</div>
-           
-         </div>
-      </div>
-
-
-
-      <div class="box" data-aos="fade-up" data-aos-delay="600">
-         <img src="images/edit/PEPITO.png" alt="">
-         <div class="content">
-            
-            <h3>PEPITO CHOXI</h3>
-            <div class="price">$ 6.890</div>
-            <!-- <a href="#" class="btn">add to cart</a> -->
-         </div>
-      </div>
-
-      <div class="box" data-aos="fade-up" data-aos-delay="750">
-         <img src="images/edit/PERRO CALIENTE.png" alt="">
-         <div class="content">
-            <h3>PERRO CALIENTE</h3>
-            <div class="price">$ 1.750</div>
-           <!--  <a href="#" class="btn">add to cart</a> -->
-         </div>
-      </div>
-
-      <div class="box" data-aos="fade-up" data-aos-delay="900">
-         <img src="images/edit/TEQUEÑOS.png" alt="">
-         <div class="content">
-         
-            <h3>BANDEJA DE TEQUEÑOS</h3>
-            <div class="price">$ 3.000</div>
-            
-            <!-- <a href="#" class="btn">add to cart</a> -->
-         </div>
-      </div>
-      
    </div>
 
 </section>
@@ -156,77 +105,12 @@ include 'includeweb/header.php';
          <h3> <i class="fas fa-check"></i> Quesos Naturales </h3>
          <h3> <i class="fas fa-check"></i> Atención Esmerada</h3>
       </div>
-      <a href="menu.html" class="btn">La Carta</a>
+      <a href="menu.php" class="btn">La Carta</a>
    </div>
 
 </section>
 
 <!-- Final session de nosotros-->
-
-
-
-
-
-<!-- Inicio de sesión de testimonios  -->
-
-<!-- <section class="reviews" id="reviews">
-
-   <div class="heading"> -->
-      <!-- <img src="images/title-img.png" alt=""> -->
-      <!-- <h3>Testimonios</h3>
-      <h3>de nuestros clientes</h3>
-   </div> -->
-
-   <!-- <div class="box-container">
-
-      <div class="box" data-aos="fade-up" data-aos-delay="150">
-         <img src="images/pic-1.png" alt="">
-         <h3>Carina Calderon</h3>
-         <p> (modulo Cliente) Descripción detallada de la experiencia del cliente en nuestro restaurante, aportando su nombre y una fotografia</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-      </div>
-
-      <div class="box" data-aos="fade-up" data-aos-delay="300">
-         <img src="images/pic-2.png" alt="">
-         <h3>Jose Perez</h3>
-         <p>(modulo Cliente) Descripción detallada de la experiencia del cliente en nuestro restaurante, aportando su nombre y una fotografia</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-      </div>
-
-      <div class="box" data-aos="fade-up" data-aos-delay="450">
-         <img src="images/pic-3.png" alt="">
-         <h3>Maria Rodriguez</h3>
-         <p>(modulo Cliente) Descripción detallada de la experiencia del cliente en nuestro restaurante, aportando su nombre y una fotografia</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-      </div> -->
-
-   <!-- </div>
-
-</section> -->
-
-<!-- Sesion Clientes-->
-
-
-
-
 
 
 <!-- contact section starts  -->
@@ -269,11 +153,21 @@ include 'includeweb/header.php';
             
          </div>
 
-         <form action="">
-            <input data-aos="fade-up" data-aos-delay="150" type="text" placeholder="Nombre Completo" class="box">
-            <input data-aos="fade-up" data-aos-delay="300" type="email" placeholder="email" class="box">
-            <input data-aos="fade-up" data-aos-delay="450" type="number" placeholder="Telefono" class="box">
-            <textarea data-aos="fade-up" data-aos-delay="600" name="" placeholder="mensaje" class="box" id="" cols="30" rows="10"></textarea>
+         <form action="emailSend.php" method="POST">
+            <input data-aos="fade-up" name="nombre" data-aos-delay="150" type="text" placeholder="Nombre Completo" class="box" required="">
+            <input data-aos="fade-up" name="email" data-aos-delay="300" type="email" placeholder="email" class="box">
+            <input data-aos="fade-up" name="telefono" data-aos-delay="450" type="number" placeholder="Telefono" class="box">
+           
+              
+              <select data-aos="fade-up" name="asunto" data-aos-delay="450" type="text" class="box">
+                <option value="Reservaciónnn" class="box">Reservación</option>
+                <option value="Observación" class="box">Observación</option>
+                <option data-aos="fade-up" data-aos-delay="450" type="text" class="box">Recomendación</option>
+                <option data-aos="fade-up" data-aos-delay="450" type="text" class="box">Otro Motivo</option>
+              </select>
+            
+           <!--  <input data-aos="fade-up" name="asunto" data-aos-delay="450" type="text" placeholder="Motivo" class="box"> -->
+            <textarea data-aos="fade-up" name="mensaje" data-aos-delay="600" placeholder="mensaje" class="box" id="" cols="30" rows="10"></textarea>
             <input data-aos="fade-up" data-aos-delay="750" type="submit" value="enviar" class="btn">
          </form>
 

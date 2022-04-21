@@ -12,6 +12,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
 
+
 <!--   plugin Sweealert2 -->
 <link rel="stylesheet" href="./plugins/sweetalert2/sweetalert2.min.css">
 
@@ -23,11 +24,11 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="./dist/css/adminlte.css">
   <link rel="stylesheet" href="./dist/css/estilos.css">
+ 
+ 
 
 </head>
 <body class="hold-transition sidebar-mini">
-
-
 
 <!-- -------------------------------------------------------->
 <!---------------Inicio Header Principal--------------------->

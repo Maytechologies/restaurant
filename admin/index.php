@@ -324,6 +324,8 @@ if (!$auth) {
   </section> <!-- /.content -->
 </div><!-- /.contenido principal -->
 
+
+
 <?php
 
 //CERRAMOS LA CONEXION
