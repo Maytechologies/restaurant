@@ -1,0 +1,27 @@
+
+
+.modal-body{
+    border: transparent !important;
+}
+
+
+.nombre_pro{
+    font-size: 12px;
+    color: rgb(217, 147, 16);  
+    
+}
+
+.precio_pro{
+    color: #fff;
+}
+
+.card_producto{
+    background: transparent !important;
+    border: solid 0.1rem rgba(167, 166, 166, 0.164);
+    cursor: pointer;
+    
+}
+
+.info-box{
+    background: transparent !important;
+}

@@ -5,10 +5,7 @@
 --------------------------------------------------------- -->
 <?php
 require './functions/function.php';
-/* echo "<pre>";
-var_dump($_SERVER);
-echo "</pre>"; */
- 
+
 
 $auth = onlineUser();
 

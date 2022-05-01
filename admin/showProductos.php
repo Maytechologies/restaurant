@@ -122,7 +122,7 @@ include 'views/adm_menu.php';
 
 
 <!-- Contenido principal -->
-<div class="content-wrapper">
+<div class="content-wrapper mb-4">
 
     <!-- Main content -->
 <section class="content"> 

@@ -83,36 +83,34 @@ include 'views/adm_menu.php';
 <!---------------------INICIAMOS EL CONTENIDO DE LA SESION----------------->
 
 
-<div class="content-wrapper">
+<div class="content-wrapper mb-4">
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
-            
-    </div>
-        <div class="row">
-            <div class="col-12 mt-2">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="col mr-auto">
-                            <h3 style="color: red !important;" class="titulo card-title font-weight-bold">USUARIOS INACTIVOS</h3>
-                               </div>                   
-                                 </div>
+        <div class="container-fluid"> 
+            <div class="row">
+                <div class="col-12 mt-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="col mr-auto">
+                                <h3 style="color: red !important;" class="titulo card-title font-weight-bold">USUARIOS INACTIVOS</h3>
+                                 </div>                   
+                                    </div>
 
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>N°</th>
-                                    <th class="text-center">FOTO</th>
-                                    <th>NOMBRE</th>
-                                    <th>CORREO ELECTRONICO</th>
-                                    <th class="text-center">PERFIL</th>
-                                    <th class="text-center">ACCIONES</th>
-                                </tr>
-                            </thead>
-                          <tbody>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>N°</th>
+                                                    <th class="text-center">FOTO</th>
+                                                    <th>NOMBRE</th>
+                                                    <th>CORREO ELECTRONICO</th>
+                                                    <th class="text-center">PERFIL</th>
+                                                    <th class="text-center">ACCIONES</th>
+                                                </tr>
+                                            </thead>
+                                        <tbody>
 
                             <?php while ($usuarios = mysqli_fetch_assoc($queryAllUser)): ?>
                                     <tr>
@@ -170,10 +168,12 @@ include 'views/adm_menu.php';
                         </tfoot>
                     </table>
                     </div> <!-- /.card-body -->
-                </div> <!-- /.col --> 
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </section><!-- /.content -->
+                   </div> <!-- /.col --> 
+                </div> <!-- FINAL CONTAINER-FLUID -->
+            </section><!-- /.content -->
+        </div><!-- /.content-wrappe -->
+    </div><!-- /.container-fluid -->
+    
 </div><!-- /.content -->
 
 <?php

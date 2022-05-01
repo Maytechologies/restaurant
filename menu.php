@@ -15,51 +15,26 @@ include 'includeweb/header.php';
         </div>
 
         <div class="box-container">
+        <?php while ($item = mysqli_fetch_assoc($QueryPromo)): ?>
 
             <div class="box" data-aos="fade-up" data-aos-delay="150">
                 <div class="image">
-                    <img src="images/cards/MIXTA_PRO.webp" alt="pepito" class="img_menu" type="image/webp">
+                    <img src="admin/uploads/Promo/<?php echo $item['photo'];?>" alt="promosion" class="img_menu" type="image/webp">
                     <div class="icons">
-                        <p class="titulo_promo">Mixta </p>
-                        <p class="text_promo">Esta delicia lleva doble carne, tocino, Queso Shedder </p>
+                        <p class="titulo_promo"><?php echo $item['name'];?></p>
+                        <p class="text_promo"><?php echo $item['description'];?></p>
                     </div>
                 </div>
                 <div class="content">
-                    <h3>hamburguesa mixta</h3>
+                    <h3><?php echo $item['name'];?></h3>
                 </div>
             </div>
 
+            <?php endwhile ?>
 
+            
 
-            <div class="box" data-aos="fade-up" data-aos-delay="300">
-                <div class="image">
-                    <img src="images/cards/CLUBHOUSE_PRO.webp" alt="pepito" class="img_menu" type="image/webp">
-                    <div class="icons">
-                        <p class="titulo_promo">Club House </p>
-                        <p class="text_promo">Sandwich al estilo Americano, acompañado con papas y salsa</p>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>clubhouse</h3>
-                </div>
-            </div>
-
-          
-
-            <div class="box" data-aos="fade-up" data-aos-delay="450">
-                <div class="image">
-                    <img src="images/cards/PROBRE_PRO.webp" alt="pepito" class="img_menu" type="image/webp">
-                    <div class="icons">
-                        <p class="titulo_promo">A lo Probre </p>
-                        <p class="text_promo">Tradición chilena, papa, huevo, doble carne</p>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>A lo pobre</h3>
-                </div>
-            </div>
-
-        </div>
+        </div> <!-- Box Container -->
 
 </section>
 

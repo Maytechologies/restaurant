@@ -41,9 +41,14 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = ($datos["asunto"]);
-    $mail->Body    = ('<b>' .'Nombre del Cliente : '.'</b>'.$datos["nombre"]. '<b>'.' Telefono: '.'</b>'. $datos["telefono"].
-                        '<br>' . '<b>'. 'Correo Electronico :  '.'</b>'. $datos["email"]. 
-                        '<br>'.'<b>'. 'Mensaje : '. '</b>' . $datos["mensaje"] );
+    $mail->CharSet = "UTF-8";
+   
+    $mail->Body    = ('<img  src="https://vikas.cl/wp-content/uploads/2021/01/contacta-con-nosotros.png">'.'<br>'.
+                        '<h3 style="color: #ccc">'.'Nuevo Contacto desde el sitio Web'.'</h3>'.'<br>'.
+                        '<b>' .'Nombre del Cliente : '.'</b>'.$datos["nombre"].'<br>'.
+                        '<b>' .'Telefono: '.'</b>'. $datos["telefono"].'<br>' . 
+                        '<b>'. 'Correo Electronico :  '.'</b>'. $datos["email"].'<br>'.
+                        '<b>'. 'Mensaje : '. '</b>' . $datos["mensaje"] );
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

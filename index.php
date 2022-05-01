@@ -33,17 +33,36 @@ include 'includeweb/header.php';
    </div>
 
    <div class="box" data-aos="fade-up" data-aos-delay="300">
+    <a href="https://wa.link/eexkws" target="_blank"><i class="wha fa-brands fa-whatsapp"></a></i>
+      <a href="https://wa.link/eexkws" target="_blank"><h5 class="chat">Chat Por</h5></a>
+        <h3><a href="https://wa.link/eexkws" target="_blank" class="textwha">Whatsapp</h3></a>
+   </div>
+
+   <div class="box" data-aos="fade-up" data-aos-delay="300">
       <i class="fas fa-shipping-fast"></i>
         <h3>Delivery</h3>
       <p>+56 942589675</p>
    </div>
 
-   <div class="box" data-aos="fade-up" data-aos-delay="450">
-      <i class="fas fa-headset"></i>
-         <h3>Contacto</h3>
-        <p><a style="color: rgb(15, 233, 7);" href="https://api.whatsapp.com/send?phone=56942589675&text=hola..%20los%20contacto%20por%20medio%20de%20su%20web">WhatsApp</a></p>
-      <p><a style="color:seashell"  href="#contact">LandinPages</a></p>
-   </div>
+   
+   
+   <style>
+     .wha{
+       font-size:75px !important;
+        color: #25d366!important;
+        background: transparent !important; 
+        cursor: pointer; 
+     }
+     .textwha{
+        text-decoration: none;
+        color: #fff !important;
+     }
+     .chat{
+        color: #fff;
+        font-weight:400;
+        font-size: 14px;
+     }
+   </style>
 
 </section>
 
@@ -122,63 +141,77 @@ include 'includeweb/header.php';
       <h3>Contactanos</h3>
    </div>
 
-   <div class="row">
+   <style>
+      .map{
+         height: 400px;
+      }
+   </style>
 
-     <div class="mapa">
-      <iframe data-aos="fade-up" data-aos-delay="150" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3457.605250074494!2d-71.26526378519152!3d-29.93326468192287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691ca49dae90043%3A0x9de68ed50f78c77a!2sIsla%20Tenglo%203573%2C%20La%20Serena%2C%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1643158974594!5m2!1ses-419!2scl" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-     </div>
+   <div class="row mb-5">
+      <div class="col col-md-12 col-sm-12">
+         <div class="mapa">
+            <iframe data-aos="fade-up" data-aos-delay="150" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3457.605250074494!2d-71.26526378519152!3d-29.93326468192287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691ca49dae90043%3A0x9de68ed50f78c77a!2sIsla%20Tenglo%203573%2C%20La%20Serena%2C%20Coquimbo!5e0!3m2!1ses-419!2scl!4v1643158974594!5m2!1ses-419!2scl"allowfullscreen="" loading="lazy"></iframe>
+         </div>
+      </div> 
+   </div>
+
+<div class="row">
+   <div class="col">
       <div class="form">
 
-         <div class="icons-container">
+         <div class="icons-container my-5">
+              <div class="row mx-auto">
+                 <div class="col-col-md-6">
+                     <div class="icons" data-aos="fade-up" data-aos-delay="150">
+                        <i class="fas fa-map"></i>
+                        <h3>Dirección :</h3>
+                        <p> Sector Cuatro Esquina, la serena</p>
+                        <p>Isla tenglo 3573,</p>
+                     </div>
+                  </div>
 
-           <div class="icons" data-aos="fade-up" data-aos-delay="150">
-               <i class="fas fa-map"></i>
-               <h3>Dirección :</h3>
-               <p>Isla tenglo 3573, Sector Cuatro Esquina, la serena</p>
-            </div>
-
-            <!-- <div class="icons" data-aos="fade-up" data-aos-delay="300">
-               <i class="fas fa-envelope"></i>
-               <h3>email :</h3>
-               <p>correo_ventas@gmail.com</p>
-               <p>pepitoburguer@gmail.com</p>
-            </div> -->
-
-            <div class="icons" data-aos="fade-up" data-aos-delay="450">
-               <i class="fas fa-phone"></i>
-               <h3>Teléfonos :</h3>
-               <p>+56 942589675</p>
                
-            </div> 
-            
+                  <div class="col-col-md-6">
+                     <div class="icons" data-aos="fade-up" data-aos-delay="350">
+                        <i class="fas fa-phone"></i>
+                          <h3>Teléfonos :</h3>
+                            <p>+56 942589675</p>
+                        
+                     </div> 
+                  </div>    
+              </div>     
+       </div>
+
+      <div class="row justify-content-md-center">
+         <div class="col col-md-8">
+            <h2 class="heading text-white mt-5">Formulario de Contacto</h2>
+               <form action="emailSend.php" method="POST">
+                     <input data-aos="fade-up" name="nombre" data-aos-delay="150" type="text" placeholder="Nombre Completo" class="box" required="">
+                     <input data-aos="fade-up" name="email" data-aos-delay="300" type="email" placeholder="email" class="box">
+                     <input data-aos="fade-up" name="telefono" data-aos-delay="450" type="number" placeholder="Telefono" class="box">
+                  
+                     
+                     <select data-aos="fade-up" name="asunto" data-aos-delay="450" type="text" class="box">
+                        <option value="Reservaciónnn" class="box bg-black">Reservación</option>
+                        <option value="Observación" class="box bg-black">Observación</option>
+                        <option value="Recomendacion" class="box bg-black">Recomendación</option>
+                        <option value="Otro" class="box bg-black">Otro Motivo</option>
+                     </select>
+                     
+                  <!--  <input data-aos="fade-up" name="asunto" data-aos-delay="450" type="text" placeholder="Motivo" class="box"> -->
+                     <textarea data-aos="fade-up" name="mensaje" data-aos-delay="600" placeholder="mensaje" class="box" id="" cols="30" rows="10"></textarea>
+                     <input data-aos="fade-up" data-aos-delay="750" type="submit" value="enviar" class="btn">
+               </form>
          </div>
-
-         <form action="emailSend.php" method="POST">
-            <input data-aos="fade-up" name="nombre" data-aos-delay="150" type="text" placeholder="Nombre Completo" class="box" required="">
-            <input data-aos="fade-up" name="email" data-aos-delay="300" type="email" placeholder="email" class="box">
-            <input data-aos="fade-up" name="telefono" data-aos-delay="450" type="number" placeholder="Telefono" class="box">
-           
-              
-              <select data-aos="fade-up" name="asunto" data-aos-delay="450" type="text" class="box">
-                <option value="Reservaciónnn" class="box">Reservación</option>
-                <option value="Observación" class="box">Observación</option>
-                <option data-aos="fade-up" data-aos-delay="450" type="text" class="box">Recomendación</option>
-                <option data-aos="fade-up" data-aos-delay="450" type="text" class="box">Otro Motivo</option>
-              </select>
-            
-           <!--  <input data-aos="fade-up" name="asunto" data-aos-delay="450" type="text" placeholder="Motivo" class="box"> -->
-            <textarea data-aos="fade-up" name="mensaje" data-aos-delay="600" placeholder="mensaje" class="box" id="" cols="30" rows="10"></textarea>
-            <input data-aos="fade-up" data-aos-delay="750" type="submit" value="enviar" class="btn">
-         </form>
-
       </div>
-
-   </div>
+    </div> <!-- Final Formulario -->
+   </div><!--  Final Columna -->
+</div><!-- Final Row -->
 
 </section>
 
 <!-- final sesion de contacto -->
-<section class="blogs" id="blogs">
+<section class="blogs my-5" id="blogs">
 
    <div class="heading">
        <h3>Promociones del Día</h3>

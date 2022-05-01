@@ -82,7 +82,7 @@ include 'views/adm_menu.php';
 <!-- Contenido principal -->
 
 <div class="section">
-  <div class="content-wrapper w-70">
+  <div class="content-wrapper w-70 mb-4">
 
     <!-- Main content -->
     

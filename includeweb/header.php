@@ -8,6 +8,14 @@
 include './admin/config/dbconfig.php';
 
 $db = conectarDB();
+ //SENTENCIA SQL CONSULTA A PROMOSIONES
+
+ $SqlPromo = "SELECT *FROM promosion  WHERE publisher = 1";
+ $QueryPromo = mysqli_query($db, $SqlPromo);
+
+/* print_r($QueryPromo);
+exit; */
+
 
 //SENETENCIA PARA REGISTRAR VISITAS EFECTUADAS A LA PAGINA DAHSBOARD
 date_default_timezone_set("America/Santiago");
@@ -82,11 +90,13 @@ $tablesProductos = "SELECT p.id, p.nombre, p.small_img, p.precio, p.ingredientes
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carta.css">
 
 </head>
 <body>

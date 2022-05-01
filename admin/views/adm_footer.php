@@ -2,7 +2,7 @@
 
 <!-- SESION DE FOOTER -->
 
-<footer class="main-footer">
+<footer class="main-footer fixed-bottom mt-2">
     <div class="float-right d-none d-sm-block">
       <b>Desarrollo > </b><a class="text-danger" href="#">MAYTech</a>     
     </div>
@@ -89,6 +89,7 @@
     title: 'Error al Ejecutar',
     text: "Proceso no admitido",
     icon: 'warning',
+    
    
   })
   </script>

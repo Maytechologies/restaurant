@@ -78,7 +78,7 @@
           </li>
            <!-- ============================================= -->
           <li class="nav-item">
-            <a href="show.php" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-box-open text-blue"></i>
                 <p>Admin-Productos</p>
                   </a>
@@ -93,6 +93,27 @@
                           <a href="showProductosDow.php" class="nav-link">
                         <i class="nav-icon far fa-circle text-danger"></i>
                      <p>Productos Inactivos</p>
+                  </a>
+               </li>
+            </ul>
+          </li>
+          <!-- ============================================= -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-gifts text-success"></i>
+                <p>Admin-Promosiones</p>
+                  </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="showPromo.php" class="nav-link">
+                         <i class="nav-icon far fa-circle text-success"></i>
+                          <p>Promosión</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                          <a href="showPromoDow.php" class="nav-link">
+                        <i class="nav-icon far fa-circle text-danger"></i>
+                     <p>Promo Inactivas</p>
                   </a>
                </li>
             </ul>

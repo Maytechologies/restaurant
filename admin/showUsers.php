@@ -83,7 +83,7 @@ include 'views/adm_menu.php';
 <!---------------------INICIAMOS EL CONTENIDO DE LA SESION----------------->
 
 
-<div class="content-wrapper">
+<div class="content-wrapper mb-4">
 
     <!-- Main content -->
     <section class="content">
