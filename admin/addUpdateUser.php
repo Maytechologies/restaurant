@@ -47,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $user_name  = mysqli_real_escape_string($db, $_POST['user_name']);  
 $email  = mysqli_real_escape_string($db, $_POST['email']);  
 $password  = mysqli_real_escape_string($db, $_POST['password']);  
-$tipo_id  = mysqli_real_escape_string($db, $_POST['tipo_id']);  
+$tipo_id  = mysqli_real_escape_string($db, $_POST['tipo_id']); 
+$passwordmd5   = password_hash($password, PASSWORD_BCRYPT); 
 
 /* si selecionamos una nueva imagen para el usuaio
    Asignamos los datos que se recibe por variable global $_FILES a una variable */
@@ -96,12 +97,12 @@ $photoUser = $_FILES['photo'];
            // NOTA: teclear cuidadosamente la sentencia SQL, encerrar los campos tipo string entre '' y los campos tipo numero sin comillas
             $query = "UPDATE usuarios SET  user_name = '${user_name}',
                                             email = '${email}',
-                                            password = '${password}',
+                                            password = '${passwordmd5}',
                                             photo = '${nombreImagen}',
                                             tipo_id = ${tipo_id}
                                             WHERE id = ${id} ";
 
-              /* echo "<pre>";
+           /*  echo "<pre>";
             var_dump($query);
             echo "</pre>";  
             exit; */  

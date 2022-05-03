@@ -7,6 +7,10 @@
 $tipou = "SELECT * FROM tipo_usuario";
 $resul_tipou = mysqli_query($db, $tipou); // este query lo aplicamos en la etiqueta select del formulario de registro
 
+/* echo "<pre>";
+            var_dump($usuarios);
+               echo "</pre>";  
+                   exit;  */
 
 ?>
 <!---------------------------------------->

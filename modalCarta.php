@@ -3,7 +3,7 @@
 
 <div class="modal fade" id="modal<?php echo $productos['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
+              <div class="modal-content modal-dialog-centered">
                 
                     <img class="card-img-top w-100" src="/admin/uploads/modals/<?php echo $productos['img_modal']; ?>" alt="Card image cap">
                

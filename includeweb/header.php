@@ -10,7 +10,7 @@ include './admin/config/dbconfig.php';
 $db = conectarDB();
  //SENTENCIA SQL CONSULTA A PROMOSIONES
 
- $SqlPromo = "SELECT *FROM promosion  WHERE publisher = 1";
+ $SqlPromo = "SELECT *FROM promosion  WHERE publisher = 1 LIMIT 3";
  $QueryPromo = mysqli_query($db, $SqlPromo);
 
 /* print_r($QueryPromo);

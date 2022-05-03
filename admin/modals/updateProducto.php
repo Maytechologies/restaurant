@@ -23,7 +23,7 @@ $resul_modal = mysqli_query($db, $modals);
 <!----- Modal ------->
 <!------------------->
 <div class="modal fade" id="updateproducto<?php echo $productos['id']; ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-warning">
         <h5 class="modal-title" id="staticBackdropLabel">Editar Producto</h5>
